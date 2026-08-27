@@ -21,8 +21,13 @@ IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
 
 N100
 
+IF #70661 THEN GOTO 1000		 ;Skip macro if already at mid position
+IF #70660 THEN GOTO 500		     ;Skip M70 if already at high position
+
+M70								 ;Request spindle to high position first
+
+N500
 M94 /71                          ;Request spindle to med position
-G4 P.25                          ;Wait 250ms
 M101 /70663						 ;Wait for SpindleMoveComplete_M
 
 N1000

@@ -21,8 +21,9 @@ IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
 
 N100
 
+IF #70662 THEN GOTO 1000		 ;Skip macro if already at low position
+
 M94 /72                          ;Request spindle to low position
-G4 P.25                          ;Wait 250ms
 M101 /70663						 ;Wait for SpindleMoveComplete_M
 
 N1000

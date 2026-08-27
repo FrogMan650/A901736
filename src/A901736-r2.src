@@ -1,5 +1,5 @@
-;-------------------------------------------------------------------------------
-; File:         A901736-r1.src
+ ;-------------------------------------------------------------------------------
+; File:         A901736-r2.src
 ; Corresponding Schematic: S15182.DWG - 220VAC, SureServo2 Drives
 ;                          S15098.DWG - 440VAC, Yaskawa Drives
 ;                          S14798.DWG - 220VAC, Yaskawa Drives
@@ -19,7 +19,7 @@
 ; Aux  9 Key: Index Carousel +
 
 ; Revisions:
-; 06 May 2026 LEK Added Busellato Router inputs and outputs
+; 08 May 2026 LEK Added Busellato Router inputs and outputs
 ; 08 Jan 2026 CTB Corrected VCP Jog Keys under JogKeysInvert2Stage and JogKeysSwapAndInvert2Stage.
 ; 12 Dec 2025 CTB Fixed MPG_LED_OUT_O being omitted from MPGLED_O Logic.
 ; 27 Oct 2025 CTB Corrected Logic for Kb Spindle CW/CCW so that it does not conflict with
@@ -69,6 +69,11 @@
 ; 20 Nov 2018 MML Removed EstopOk from setting ResetSet
 ; 16 Oct 2018 MML	Updated USB MPG feedrate logic
 ; 25 Sep 2018 MML	Added logic for VCP increments
+
+; Local Revisions
+; 260501 - BJF - Commented out LubeOk_I input (280), fault (4019/20), and warning (4022/23)
+; 260501 - BJF - Added SpinAgree_I for input 9
+
 
 ; Params:
 ; SV_MACHINE_PARAMETER_1   : Add 2 = Invert Ax2 Jog Keys,
@@ -278,7 +283,8 @@ Ax3_MinusLimitOk_I              IS INP5
 Ax3_PlusLimitOk_I               IS INP6
 RotaryTableHome_I               IS INP7
 DoorClosed_I                    IS INP8
-LubeOk_I                        IS INP9  ;Lube_O is "ok" when input is closed
+;LubeOk_I                       IS INP9  ;Lube_O is "ok" when input is closed
+SpinAgree_I                     IS INP9  ;Added 260501
 SpindleInverterOk_I             IS INP10 ;Inverter is "ok" when input is closed
 EStopOk_I                       IS INP11
 ZeroSpeed_I                     IS INP12
@@ -289,17 +295,17 @@ SpinHighRange_I                 IS INP15
 
 ;If a PLC expansion board (PLCADD1616) is used, the additional inputs will
 ;begin at input 17.
-OrientComplete_I                IS INP17
-AirPressureOk_I                 IS INP18
-;spare                          IS INP19
-;spare                          IS INP20
+UpperSpindleHigh_I              IS INP17
+UpperSpindleLow_I               IS INP18
+LowerSpindleHigh_I              IS INP19
+LowerSpindleLow_I               IS INP20
 ToolClamped_I                   IS INP21
 ToolUnclamped_I                 IS INP22
 ToolRelease_I                   IS INP23
 ToolCounter_I                   IS INP24
-SpinHeightHigh_I                IS INP25 ;SQ441 Spindle height sensor (high)
-SpinHeightMed_I                 IS INP26 ;SQ441A Spindle height sensor (med)
-SpinHeightLow_I                 IS INP27 ;SQ442 Spindle height sensor (low)
+;spare                          IS INP25
+;spare                          IS INP26
+;spare                          IS INP27
 CarouselAtHome_I                IS INP28
 ;spare                          IS INP29
 ;spare                          IS INP30
@@ -434,11 +440,11 @@ JpFeedOrKnobBit15_I             IS INP1264 ; unused
 ;       Note: Outputs 10 through 16 are physically unavailable
 ;----------------------------------------------------------------
 NoFaultOut_O                    IS OUT1  ;SPST Type
-Lube_O                          IS OUT2  ;SPST Type
-Flood_O                         IS OUT3  ;SPST Type
-Mist_O                          IS OUT4  ;SPST Type
+ToolUnclampOut_O                IS OUT2  ;SPST Type
+;spare                          IS OUT3  ;SPST Type
+;spare                          IS OUT4  ;SPST Type
 InverterResetOut_O              IS OUT5  ;SPST Type
-WorkLightOut_O                  IS OUT6  ;SPST Type
+;spare                          IS OUT6  ;SPST Type
 SpindleEnableOut_O              IS OUT7  ;SPST Type
 SpindleDirectionOut_O           IS OUT8  ;SPDT Type
 ZBrakeRelease_O                 IS OUT9  ;SPDT Type
@@ -463,22 +469,22 @@ SpindleDACModeBit2_O            IS OUT16 ;Logical only
 
 ;If a PLC expansion board (PLCADD1616) is used, the additional inputs will
 ;begin at output 17.
-OrientRequest_O                 IS OUT17  ;SPST Type
-SpindleCollet_O                 IS OUT18  ;SPST Type YV263 Spindle collet pneumatic solenoid
-SpindleFan_O                    IS OUT19  ;SPST Type
-LeftPosts_O                     IS OUT20  ;SPST Type YV1A Left reference posts
-FrontPosts_O                    IS OUT21  ;SPST Type YV5A Front reference posts
-ToolUnclampOut_O                IS OUT22  ;SPST Type
-CarouselEnable_O                IS OUT23  ;SPST Type
-CarouselCCW_O                   IS OUT24  ;SPDT Type
-ClampArea_O                     IS OUT25  ;SPDT Type YV9A Clamp area
-AirBlow_O                       IS OUT26  ;SPST Type
-SpindleGoHigh_O                 IS OUT27  ;SPST Type YV202B Spindle high solenoid
-SpindleGoMed_O                  IS OUT28  ;SPST Type YV202A Spindle med solenoid
-SpindleGoLow_O                  IS OUT29  ;SPST Type YV202D Spindle low solenoid
+FrontFence_O					IS OUT17  ;SPST Type
+LeftFence_O  		            IS OUT18  ;SPST Type
+VacEnable_O                     IS OUT19  ;SPST Type
+DustHoodDown_O                  IS OUT20  ;SPST Type
+SpindleUp_O                     IS OUT21  ;SPST Type
+SpindleMid_O                    IS OUT22  ;SPST Type
+SpindleTool_O                   IS OUT23  ;SPST Type
+ClampArea_O						IS OUT24  ;SPDT Type
+;spare                          IS OUT25  ;SPDT Type
+;spare                          IS OUT26  ;SPST Type
+;spare                          IS OUT27  ;SPST Type
+;spare                          IS OUT28  ;SPST Type
+;spare                          IS OUT29  ;SPST Type
 ;spare                          IS OUT30  ;SPST Type
-CarouselInSol_O                 IS OUT31  ;SPST Type
-CarouselOutSol_O                IS OUT32  ;SPST Type
+;spare                          IS OUT31  ;SPST Type
+AirBlow_O                       IS OUT32  ;SPST Type
 
 ; These bits control the actual analog hardware output on the OAK.
 ; Output = 16bit (0-32768) 0-10VDC.
@@ -1456,13 +1462,14 @@ M19_SV                           IS SV_M94_M95_19;Orient Spindle
 PutbackComplete_SV               IS SV_M94_M95_40;PutbackComplete_SV
 M50_SV                           IS SV_M94_M95_50;(Carousel Index +)
 M51_SV                           IS SV_M94_M95_51;(Carousel Index -)
-M60_SV                           IS SV_M94_M95_60;SpindleCollet (M60 on M61 off)
-M62_SV                           IS SV_M94_M95_62;LeftPosts (M62 on M63 off)
-M64_SV                           IS SV_M94_M95_64;FrontPosts (M64 on M65 off)
-M66_SV                           IS SV_M94_M95_66;ClampArea (M66 on M67 off)
-M70_SV							 IS SV_M94_M95_70;SpindleGoHigh (M70 on)
-M71_SV							 IS SV_M94_M95_71;SpindleGoMed (M71 on)
-M72_SV							 IS SV_M94_M95_72;SpindleGoLow (M72 on)
+
+M62_SV                           IS SV_M94_M95_62;LeftFence_O (M62 on M63 off)
+M64_SV                           IS SV_M94_M95_64;FrontFence_O (M64 on M65 off)
+M66_SV                           IS SV_M94_M95_66;ClampArea_O (M66 on M67 off)
+M70_SV							 IS SV_M94_M95_70;SpindleUp_O (M70 on)
+M71_SV							 IS SV_M94_M95_71;SpindleMid_O (M71 on)
+M72_SV							 IS SV_M94_M95_72;SpindleTool_O (M72 on)
+
 M80_SV                           IS SV_M94_M95_80;Carousel In
 M81_SV                           IS SV_M94_M95_81;Carousel Out
 
@@ -1972,12 +1979,12 @@ IF True_M THEN SpindleFan_T = SV_MACHINE_PARAMETER_997 * 1000
 ; running for MMM minutes is to prevent lubing when the user leaves for the
 ; weekend, leaving the machine on and E-stop disengaged.
 
-IF SV_PROGRAM_RUNNING THEN SET Lube_O, RST LubeM_T
-IF !SV_PROGRAM_RUNNING THEN LubeM_T = LubeM_W, SET LubeM_T
-IF LubeM_T || SV_STOP THEN RST Lube_O
+;IF SV_PROGRAM_RUNNING THEN SET Lube_O, RST LubeM_T
+;IF !SV_PROGRAM_RUNNING THEN LubeM_T = LubeM_W, SET LubeM_T
+;IF LubeM_T || SV_STOP THEN RST Lube_O
 
 ;=============================================================================
-                        LubeUsePLCTimersStage
+;                        LubeUsePLCTimersStage
 ;=============================================================================
 ;
 ; METHOD 2 (SS != 0) For lube pumps that do not have internal timers.
@@ -2000,15 +2007,15 @@ IF LubeM_T || SV_STOP THEN RST Lube_O
 ; possible with frequent use of E-stop that a lube cycle is cut short.
 ;
 
-IF SV_PROGRAM_RUNNING  THEN LubeM_T = LubeM_W, SET LubeM_T
-IF !SV_PROGRAM_RUNNING THEN (StopRunningPD_PD)
-IF StopRunningPD_PD THEN LubeAccumTime_W = LubeAccumTime_W + LubeM_T, RST LubeM_T
-IF LubeM_T || (LubeAccumTime_W + LubeM_T > LubeM_W)
-  THEN SET Lube_O, LubeS_T = LubeS_W, SET LubeS_T, RST LubeM_T, LubeAccumTime_W = 0
-IF LubeS_T || SV_STOP THEN RST Lube_O, RST LubeS_T
+;IF SV_PROGRAM_RUNNING  THEN LubeM_T = LubeM_W, SET LubeM_T
+;IF !SV_PROGRAM_RUNNING THEN (StopRunningPD_PD)
+;IF StopRunningPD_PD THEN LubeAccumTime_W = LubeAccumTime_W + LubeM_T, RST LubeM_T
+;IF LubeM_T || (LubeAccumTime_W + LubeM_T > LubeM_W)
+;  THEN SET Lube_O, LubeS_T = LubeS_W, SET LubeS_T, RST LubeM_T, LubeAccumTime_W = 0
+;IF LubeS_T || SV_STOP THEN RST Lube_O, RST LubeS_T
 
 ;=============================================================================
-                        KeyboardEventsStage
+;                        KeyboardEventsStage
 ;=============================================================================
 ; This stage handles functions that are required for menu navigation
 ; by CNC11, require multiple keypresses and/or need to be interlocked
@@ -2031,9 +2038,9 @@ IF LubeS_T || SV_STOP THEN RST Lube_O, RST LubeS_T
 ; toggle for Fast/Slow jog should not activate, this key combination is used
 ; by menus in CNC12 and should not be acted on by the PLC unless that specific
 ; combination is required for the action.
-IF Kb_L_Shift_SV || Kb_R_Shift_SV THEN (KbShiftPressed_M)
-IF Kb_L_Ctrl_SV || Kb_R_Ctrl_SV THEN (KbCtrlPressed_M)
-IF Kb_L_Alt_SV || Kb_R_Alt_SV THEN (KbAltPressed_M)
+;IF Kb_L_Shift_SV || Kb_R_Shift_SV THEN (KbShiftPressed_M)
+;IF Kb_L_Ctrl_SV || Kb_R_Ctrl_SV THEN (KbCtrlPressed_M)
+;IF Kb_L_Alt_SV || Kb_R_Alt_SV THEN (KbAltPressed_M)
 
 ;-------------------------Not interlocked------------------------
 ; The code for cycle cancel has been moved to the main stage.
@@ -2945,19 +2952,19 @@ IF (CoolAutoModeLED_O && CoolantAutoManualPD_PD && AllowKbInput_M)
 ; In manual mode:
 ;  Turn off if entering manual mode
 ;  Toggle by key press
-IF CoolFloodKey_I || KbFloodOnOff_M || SkinCoolFlood_M_SV THEN (CoolantFloodPD_PD)
-IF ((Flood_O ^ (!CoolAutoModeLED_O && CoolantFloodPD_PD)) ||
-   CoolAutoModeLED_O && M8_SV) &&
-   !(SV_STOP || CoolantAutoManualPD_PD || CoolAutoModeLED_O && !M8_SV || ErrorFlag_M || DoToolCheck_SV)
-  THEN (Flood_O), (CoolFloodLED_O), (SelectCoolantFlood_SV)
-
+;IF CoolFloodKey_I || KbFloodOnOff_M || SkinCoolFlood_M_SV THEN (CoolantFloodPD_PD)
+;IF ((Flood_O ^ (!CoolAutoModeLED_O && CoolantFloodPD_PD)) ||
+;   CoolAutoModeLED_O && M8_SV) &&
+;   !(SV_STOP || CoolantAutoManualPD_PD || CoolAutoModeLED_O && !M8_SV || ErrorFlag_M || DoToolCheck_SV)
+;  THEN (Flood_O), (CoolFloodLED_O), (SelectCoolantFlood_SV)
+;
 ;--Mist coolant on/off
-IF (CoolMistKey_I || KbMistOnOff_M || SkinCoolMist_M_SV) THEN (CoolantMistPD_PD)
-IF ((Mist_O ^ (!CoolAutoModeLED_O && CoolantMistPD_PD)) ||
-   CoolAutoModeLED_O && M7_SV) &&
-   !(SV_STOP || CoolantAutoManualPD_PD || CoolAutoModeLED_O && !M7_SV || ErrorFlag_M || DoToolCheck_SV)
-  THEN (Mist_O), (CoolMistLED_O), (SelectCoolantMist_SV)
-
+;IF (CoolMistKey_I || KbMistOnOff_M || SkinCoolMist_M_SV) THEN (CoolantMistPD_PD)
+;IF ((Mist_O ^ (!CoolAutoModeLED_O && CoolantMistPD_PD)) ||
+;   CoolAutoModeLED_O && M7_SV) &&
+;   !(SV_STOP || CoolantAutoManualPD_PD || CoolAutoModeLED_O && !M7_SV || ErrorFlag_M || DoToolCheck_SV)
+;  THEN (Mist_O), (CoolMistLED_O), (SelectCoolantMist_SV)
+;
 ;--Spindle Control
 ;-------------------------------------------------------------
 ; JOGBOARD SPINDLE CONTROL
@@ -3803,22 +3810,22 @@ IF True_M THEN SV_SPINDLE_METER = SpindleMeter_W
 ;           Busellato Router Section
 ;----------------------------------------------------------------
 ;outputs
-IF M60_SV THEN (SpindleCollet_O)
-IF M62_SV THEN (LeftPosts_O)
-IF M64_SV THEN (FrontPosts_O)
+IF M62_SV THEN (LeftFence_O)
+IF M64_SV THEN (FrontFence_O)
 IF M66_SV THEN (ClampArea_O)
-IF M70_SV THEN (SpindleGoHigh_O)
-IF M71_SV THEN (SpindleGoMed_O)
-IF M72_SV THEN (SpindleGoLow_O)
+IF M70_SV THEN (SpindleUp_O)
+IF M71_SV THEN (SpindleMid_O)
+IF M72_SV THEN (SpindleTool_O)
 
-IF SpinHeightHigh_I THEN (SpindleIsHigh_M)
-IF SpinHeightMed_I THEN (SpindleIsMed_M)
-IF SpinHeightLow_I THEN (SpindleIsLow_M)
+IF UpperSpindleHigh_I && UpperSpindleLow_I THEN (SpindleIsHigh_M)
+IF LowerSpindleHigh_I THEN (SpindleIsMed_M)
+IF LowerSpindleLow_I THEN (SpindleIsLow_M)
+
+IF SpindleMoveComplete_M THEN RST SpindleMoveComplete_M
 
 IF M70_SV && SpindleIsHigh_M || M71_SV && SpindleIsMed_M || 
 	M72_SV && SpindleIsLow_M THEN SET SpindleMoveComplete_M, 
 		RST M70_SV, RST M71_SV, RST M72_SV
-
 
 ;----------------------------------------------------------------
 ;           EStop and Reset Section
@@ -4012,9 +4019,9 @@ IF NoMacroKeyPressedTimer_T THEN SV_SYS_MACRO = 0,
 ;------------------------------------------------------------------------------
 
 ;--Worklight
-IF (Aux7Key_I || SkinAux7_M_SV || KbAux7Key_M) THEN (Aux7_PD)
-IF (Aux7_PD ^ Aux7LED_O) || OnAtPowerUp_M THEN (Aux7LED_O)
-IF Aux7LED_O THEN (WorkLightOut_O)       
+;IF (Aux7Key_I || SkinAux7_M_SV || KbAux7Key_M) THEN (Aux7_PD)
+;IF (Aux7_PD ^ Aux7LED_O) || OnAtPowerUp_M THEN (Aux7LED_O)
+;IF Aux7LED_O THEN (WorkLightOut_O)       
 
 ;--Process important Keyboard keys all the time
 ;--Cycle Cancel (ESC)
@@ -4049,11 +4056,11 @@ IF !EStopOk_M THEN RST SV_STALL_ERROR,
                    RST ProbeMsgSent_M,
 				   RST AxisFault_M
 				 
-IF Initialize_T && !LubeOk_I && !SV_PROGRAM_RUNNING
-  THEN SET LubeFault_M, FaultMsg_W = LUBE_FAULT_MSG_C
+;IF Initialize_T && !LubeOk_I && !SV_PROGRAM_RUNNING
+;  THEN SET LubeFault_M, FaultMsg_W = LUBE_FAULT_MSG_C
 
-IF !LubeOk_I THEN (LowLubePD_PD)
-IF LowLubePD_PD && SV_PROGRAM_RUNNING THEN InfoMsg_W = LUBE_WARNING_MSG_C
+;IF !LubeOk_I THEN (LowLubePD_PD)
+;IF LowLubePD_PD && SV_PROGRAM_RUNNING THEN InfoMsg_W = LUBE_WARNING_MSG_C
 
 
 IF Initialize_T && !SpindleInverterOk_I
@@ -4176,64 +4183,70 @@ IF ToolClampUnclampTimer_T
 ;------------------------------------------------------------------------------
 ;                            Spindle Orient
 ;------------------------------------------------------------------------------
-IF M19_SV THEN (OrientRequest_O)
-IF OrientRequest_O THEN SET OrientTimer_T
-IF OrientRequest_O && OrientComplete_I THEN SET MonitorOrient_M, RST OrientTimer_T 
-IF OrientRequest_O && !OrientComplete_I && MonitorOrient_M 
-  THEN SET OrientLostTimer_T
-IF OrientComplete_I THEN RST OrientLostTimer_T  
-  
-IF ToolUnclampOut_O || !SV_PROGRAM_RUNNING || !M19_SV
-  THEN RST M19_SV, RST OrientRequest_O, RST MonitorOrient_M, RST OrientLostTimer_T,
-  RST OrientTimer_T
-
-IF OrientLostTimer_T THEN FaultMsg_W = ORIENT_LOST_FAULT_C, SET OtherFault_M  
-IF OrientTimer_T THEN FaultMsg_W = ORIENT_TIMEOUT_C, SET OtherFault_M
-
+;IF M19_SV THEN (OrientRequest_O)
+;IF OrientRequest_O THEN SET OrientTimer_T
+;IF OrientRequest_O && OrientComplete_I THEN SET MonitorOrient_M, RST OrientTimer_T 
+;IF OrientRequest_O && !OrientComplete_I && MonitorOrient_M 
+;THEN SET OrientLostTimer_T
+;IF OrientComplete_I THEN RST OrientLostTimer_T  
+;  
+;IF ToolUnclampOut_O || !SV_PROGRAM_RUNNING || !M19_SV
+;  THEN RST M19_SV, RST OrientRequest_O, RST MonitorOrient_M, RST OrientLostTimer_T,
+;  RST OrientTimer_T
+;
+;IF OrientLostTimer_T THEN FaultMsg_W = ORIENT_LOST_FAULT_C, SET OtherFault_M  
+;IF OrientTimer_T THEN FaultMsg_W = ORIENT_TIMEOUT_C, SET OtherFault_M
+;
 ;------------------------------------------------------------------------------
 ;                            Spindle Fan
 ;------------------------------------------------------------------------------
 ;Spindle Fan enables with Spindle, then delay turn off by P997 to allow spindle
 ; fan to cool spindle after.
-IF SpindleEnableOut_O THEN SET SpindleFan_O, RST SpindleFan_T
-IF !SpindleEnableOut_O THEN SET SpindleFan_T
-IF SpindleFan_T THEN RST SpindleFan_O
+;IF SpindleEnableOut_O THEN SET SpindleFan_O, RST SpindleFan_T
+;IF !SpindleEnableOut_O THEN SET SpindleFan_T
+;IF SpindleFan_T THEN RST SpindleFan_O
 
 ;------------------------------------------------------------------------------
 ;                            ATC Carousel
 ;------------------------------------------------------------------------------
 ;Carousel In
-IF ZeroSpeed_I && ((OrientComplete_I && M80_SV && M6_SV) || (M80_SV && Aux14Key_I))
-  THEN RST M81_SV, SET CarouselInSol_O, SET CarouselInOutTimer_T, 
-  SET MovingCarouselIn_M, RST MovingCarouselOut_M
-  
-IF SV_STOP || !SV_PROGRAM_RUNNING || (MovingCarouselIn_M && CarouselIsIn_I)
-  THEN RST CarouselInSol_O, RST M80_SV 
+;IF ZeroSpeed_I && ((OrientComplete_I && M80_SV && M6_SV) || (M80_SV && Aux14Key_I))
+;  THEN RST M81_SV, SET CarouselInSol_O, SET CarouselInOutTimer_T, 
+;  SET MovingCarouselIn_M, RST MovingCarouselOut_M
+;  
+;IF SV_STOP || !SV_PROGRAM_RUNNING || (MovingCarouselIn_M && CarouselIsIn_I)
+;  THEN RST CarouselInSol_O, RST M80_SV 
+;
+;;CarouselOut
+;IF (M81_SV && M6_SV) || (M81_SV && Aux14Key_I)
+;  THEN RST M80_SV, SET CarouselOutSol_O, SET CarouselInOutTimer_T, 
+;  SET MovingCarouselOut_M, RST MovingCarouselIn_M
+;  
+;IF SV_STOP || !SV_PROGRAM_RUNNING || (MovingCarouselOut_M && CarouselIsOut_I)
+;  THEN RST CarouselOutSol_O, RST M81_SV  
+;  
+;;RST Timer on successful completion, job cancellation or fault
+;IF SV_STOP || !SV_PROGRAM_RUNNING || (MovingCarouselIn_M && CarouselIsIn_I) || 
+;  (MovingCarouselOut_M && CarouselIsOut_I)
+;  THEN RST CarouselInOutTimer_T, RST MovingCarouselIn_M, RST MovingCarouselOut_M 
+;
+;IF (MovingCarouselIn_M && CarouselInOutTimer_T) || 
+;  (MovingCarouselOut_M && CarouselInOutTimer_T) 
+;  THEN FaultMsg_W = CAROUSEL_IN_OUT_TIME_OUT_C, SET OtherFault_M 
+;
+;;AirPressure Fault
+;IF !AirPressureOk_I && (ToolUnclampOut_O || M80_SV || M81_SV) THEN SET AirPressureLost_T
+;IF AirPressureOk_I THEN RST AirPressureLost_T
+;IF AirPressureOk_I THEN FaultMsg_W = LOW_AIR_FAULT_C, SET OtherFault_M
+;
+;;--turn off default setup variable
+;IF True_M THEN RST OnAtPowerUp_M
+;
+;-------------------------------------------------------------------------------
+;					       Reference Fence Section
+;-------------------------------------------------------------------------------
+;Drive left reference fence up
 
-;CarouselOut
-IF (M81_SV && M6_SV) || (M81_SV && Aux14Key_I)
-  THEN RST M80_SV, SET CarouselOutSol_O, SET CarouselInOutTimer_T, 
-  SET MovingCarouselOut_M, RST MovingCarouselIn_M
-  
-IF SV_STOP || !SV_PROGRAM_RUNNING || (MovingCarouselOut_M && CarouselIsOut_I)
-  THEN RST CarouselOutSol_O, RST M81_SV  
-  
-;RST Timer on successful completion, job cancellation or fault
-IF SV_STOP || !SV_PROGRAM_RUNNING || (MovingCarouselIn_M && CarouselIsIn_I) || 
-  (MovingCarouselOut_M && CarouselIsOut_I)
-  THEN RST CarouselInOutTimer_T, RST MovingCarouselIn_M, RST MovingCarouselOut_M 
-
-IF (MovingCarouselIn_M && CarouselInOutTimer_T) || 
-  (MovingCarouselOut_M && CarouselInOutTimer_T) 
-  THEN FaultMsg_W = CAROUSEL_IN_OUT_TIME_OUT_C, SET OtherFault_M 
-
-;AirPressure Fault
-IF !AirPressureOk_I && (ToolUnclampOut_O || M80_SV || M81_SV) THEN SET AirPressureLost_T
-IF AirPressureOk_I THEN RST AirPressureLost_T
-IF AirPressureOk_I THEN FaultMsg_W = LOW_AIR_FAULT_C, SET OtherFault_M
-
-;--turn off default setup variable
-IF True_M THEN RST OnAtPowerUp_M
 
 ;==============================================================================
                         MonitorIndexATCRequestStage
@@ -4265,139 +4278,139 @@ IF M6PD_PD THEN SET DoingM6_M, SET SetRequestedBinPositionStage
 ;Note: When carousel direction is reversed, CarouselReversed_M is set to ignore
 ;the first count. CarouselReversed_M is then reset and counting is resumed.
 
-IF True_M THEN MaxBinLocation_W = SV_MACHINE_PARAMETER_161
-IF CarouselEnable_O && !ToolCounter_I THEN SET ToolCounterArmed_M 
-IF CarouselEnable_O && ToolCounter_I && ToolCounterArmed_M 
-  THEN (ToolCounterPD_PD), RST ToolCounterArmed_M
-
-;Determine if we need to Skip Count
-IF ToolCounterPD_PD && ((!CarouselCCW_O && (LastCarouselDir_W == 1)) ||
-  (CarouselCCW_O && LastCarouselDir_W == 0))
-  THEN RST CarouselReversed_M
-
-IF ToolCounterPD_PD && ((!CarouselCCW_O && (LastCarouselDir_W != 1)) ||
-  (CarouselCCW_O && LastCarouselDir_W != 0))
-  THEN SET CarouselReversed_M 
-
-IF ToolCounterPD_PD && !CarouselCCW_O THEN LastCarouselDir_W = 1   
-IF ToolCounterPD_PD && CarouselCCW_O THEN LastCarouselDir_W = 0
-
-;Save LastCarouselDir_W to nonvolitile memory
-IF ToolCounterPD_PD THEN SV_NV_W1 = LastCarouselDir_W
-
-;Do not Skip Count if Parameter 852 is not set.
-IF SV_MACHINE_PARAMETER_852 == 0 THEN RST CarouselReversed_M
-
-IF ToolCounterPD_PD && CarouselCCW_O && !CarouselReversed_M
-  THEN CarouselPosition_W = CarouselPosition_W - 1
-IF ToolCounterPD_PD && !CarouselCCW_O && !CarouselReversed_M 
-  THEN CarouselPosition_W = CarouselPosition_W + 1
-
-IF CarouselPosition_W > MaxBinLocation_W THEN CarouselPosition_W = 1  
-IF CarouselPosition_W < 1 THEN CarouselPosition_W = MaxBinLocation_W
-
-;Initalize ATC Based on Parameter 164 Setting.
-IF M18_SV && (SV_MACHINE_PARAMETER_164 == 0) THEN CarouselPosition_W = 1,
-                                                  RequestedBinPosition_W = 1,
-                                                  PutBackPosition_W = 1
-IF M18_SV && (SV_MACHINE_PARAMETER_164 != 0) THEN CarouselPosition_W = SV_ATC_CAROUSEL_POSITION,
-                                                  RequestedBinPosition_W = 1,
-                                                  PutBackPosition_W = SV_ATC_TOOL_IN_SPINDLE
-
-IF !SV_PROGRAM_RUNNING THEN RST M18_SV, RST DoingM18_M
-
-IF True_M THEN SV_PLC_CAROUSEL_POSITION = CarouselPosition_W
-
-;==============================================================================
-                       SetRequestedBinPositionStage
-;==============================================================================
-IF DoingIndexPlus_M THEN RequestedBinPosition_W = CarouselPosition_W + 1 
-IF DoingIndexMinus_M THEN RequestedBinPosition_W = CarouselPosition_W - 1
-IF DoingIndex_M && (RequestedBinPosition_W > MaxBinLocation_W)
-  THEN RequestedBinPosition_W = 1 
-IF DoingIndex_M && (RequestedBinPosition_W < 1) 
-  THEN RequestedBinPosition_W = MaxBinLocation_W   
-
-IF DoingM6_M && (CarouselPosition_W == PutBackPosition_W)   
-  THEN RequestedBinPosition_W = SV_TOOL_NUMBER, 
-  SET AtPutbackLocation_M, SET WaitingForPutbackComplete_M
-  
-IF DoingM6_M && RequestedBinPosition_W - 1 != CarouselPosition_W
-  THEN SET WTF_M   
-  
-IF PutBackPosition_W == 0 THEN RST WaitingForPutbackComplete_M  
-  
-IF DoingM6_M && (CarouselPosition_W != PutBackPosition_W) &&
-  ((PutBackPosition_W != 0) && DoingM6_M) 
-  THEN RequestedBinPosition_W = PutBackPosition_W, SET DoingPutback_M
-
-IF True_M THEN RST DoingIndexMinus_M, RST DoingIndexPlus_M, JMP SetCarouselDirectionStage
-
-;==============================================================================
-                        SetCarouselDirectionStage
-;==============================================================================
-;CW 1-2-3
-IF ((RequestedBinPosition_W > CarouselPosition_W) && 
- (RequestedBinPosition_W - CarouselPosition_W <= (MaxBinLocation_W / 2))) ||
- ((RequestedBinPosition_W < CarouselPosition_W) &&
- (CarouselPosition_W - RequestedBinPosition_W > (MaxBinLocation_W / 2)))
- THEN RST CarouselCCW_O
-
-;CCW 3-2-1
-IF M18_SV || (((RequestedBinPosition_W < CarouselPosition_W) && 
- (CarouselPosition_W - RequestedBinPosition_W <= (MaxBinLocation_W / 2))) ||
- ((RequestedBinPosition_W > CarouselPosition_W) &&
- (RequestedBinPosition_W - CarouselPosition_W > (MaxBinLocation_W / 2))))
- THEN SET CarouselCCW_O
- 
-IF True_M THEN JMP RotateCarouselStage 
- 
-;==============================================================================
-                             RotateCarouselStage
-;==============================================================================
-IF (DoingM6_M || DoingIndex_M) && (RequestedBinPosition_W != CarouselPosition_W) &&
-  !WaitingForPutbackComplete_M
-  THEN SET CarouselEnable_O
-  
-IF DoingPutback_M && CarouselEnable_O THEN SET WaitingForPutbackComplete_M
-IF PutbackComplete_SV || !SV_PROGRAM_RUNNING THEN RST DoingPutback_M, RST WaitingForPutbackComplete_M  
-  
-IF (RequestedBinPosition_W == CarouselPosition_W)
-  THEN RST CarouselEnable_O
-
-IF (RequestedBinPosition_W == CarouselPosition_W) && DoingM6_M && 
-  !CarouselEnable_O && !AtPutbackLocation_M
-  THEN JMP SetRequestedBinPositionStage
-  
-IF (RequestedBinPosition_W == CarouselPosition_W) && DoingM6_M &&  
-  AtPutbackLocation_M && !AtRequestedToolLocation_M && PutbackComplete_SV
-  THEN SET AtRequestedToolLocation_M, SET ToolChangeComplete_M  
-  
-IF ((RequestedBinPosition_W == CarouselPosition_W) && DoingM6_M && AtPutbackLocation_M &&
-  AtRequestedToolLocation_M && ToolChangeComplete_M && !M6_SV) || SV_STOP
-  THEN RST RotateCarouselStage, RST CarouselEnable_O, RST SetCarouselDirectionStage,
-  RST RotateCarouselStage, RST SetRequestedBinPositionStage, RST DoingM6_M, 
-  RST M6_SV, RST AtPutbackLocation_M, RST AtRequestedToolLocation_M, 
-  RST ToolChangeComplete_M, PutBackPosition_W = CarouselPosition_W
-  
-IF (RequestedBinPosition_W == CarouselPosition_W) && DoingIndex_M
-  THEN RST DoingIndex_M  
-
-;==============================================================================
-                            ResetCarouselStage
-;==============================================================================
-IF SV_STOP || (!SV_PROGRAM_RUNNING && M6_SV) 
-  THEN RST DoingIndexMinus_M, RST DoingIndexPlus_M, RST DoingIndex_M,
-  RST CarouselEnable_O, RST SetCarouselDirectionStage, RST RotateCarouselStage,
-  RST SetRequestedBinPositionStage, RST DoingM6_M, RST M6_SV, RST AtPutbackLocation_M,
-  RST AtRequestedToolLocation_M, RST ToolChangeComplete_M, RST DoingPutback_M 
-
-IF !SV_PROGRAM_RUNNING THEN RST CarouselHomeComplete_M, RST DoingM18_M, 
-  RST WaitingForPutbackComplete_M, RST PutbackComplete_SV
-  
-;================================================================
-   SafetySwitchInterruptStage
-;================================================================
+;IF True_M THEN MaxBinLocation_W = SV_MACHINE_PARAMETER_161
+;IF CarouselEnable_O && !ToolCounter_I THEN SET ToolCounterArmed_M 
+;IF CarouselEnable_O && ToolCounter_I && ToolCounterArmed_M 
+;  THEN (ToolCounterPD_PD), RST ToolCounterArmed_M
+;
+;;Determine if we need to Skip Count
+;IF ToolCounterPD_PD && ((!CarouselCCW_O && (LastCarouselDir_W == 1)) ||
+;  (CarouselCCW_O && LastCarouselDir_W == 0))
+;  THEN RST CarouselReversed_M
+;
+;IF ToolCounterPD_PD && ((!CarouselCCW_O && (LastCarouselDir_W != 1)) ||
+;  (CarouselCCW_O && LastCarouselDir_W != 0))
+;  THEN SET CarouselReversed_M 
+;
+;IF ToolCounterPD_PD && !CarouselCCW_O THEN LastCarouselDir_W = 1   
+;IF ToolCounterPD_PD && CarouselCCW_O THEN LastCarouselDir_W = 0
+;
+;;Save LastCarouselDir_W to nonvolitile memory
+;IF ToolCounterPD_PD THEN SV_NV_W1 = LastCarouselDir_W
+;
+;;Do not Skip Count if Parameter 852 is not set.
+;IF SV_MACHINE_PARAMETER_852 == 0 THEN RST CarouselReversed_M
+;
+;IF ToolCounterPD_PD && CarouselCCW_O && !CarouselReversed_M
+;  THEN CarouselPosition_W = CarouselPosition_W - 1
+;IF ToolCounterPD_PD && !CarouselCCW_O && !CarouselReversed_M 
+;  THEN CarouselPosition_W = CarouselPosition_W + 1
+;
+;IF CarouselPosition_W > MaxBinLocation_W THEN CarouselPosition_W = 1  
+;IF CarouselPosition_W < 1 THEN CarouselPosition_W = MaxBinLocation_W
+;
+;;Initalize ATC Based on Parameter 164 Setting.
+;IF M18_SV && (SV_MACHINE_PARAMETER_164 == 0) THEN CarouselPosition_W = 1,
+;                                                  RequestedBinPosition_W = 1,
+;                                                  PutBackPosition_W = 1
+;IF M18_SV && (SV_MACHINE_PARAMETER_164 != 0) THEN CarouselPosition_W = SV_ATC_CAROUSEL_POSITION,
+;                                                  RequestedBinPosition_W = 1,
+;                                                  PutBackPosition_W = SV_ATC_TOOL_IN_SPINDLE
+;
+;IF !SV_PROGRAM_RUNNING THEN RST M18_SV, RST DoingM18_M
+;
+;IF True_M THEN SV_PLC_CAROUSEL_POSITION = CarouselPosition_W
+;
+;;==============================================================================
+;                       SetRequestedBinPositionStage
+;;==============================================================================
+;IF DoingIndexPlus_M THEN RequestedBinPosition_W = CarouselPosition_W + 1 
+;IF DoingIndexMinus_M THEN RequestedBinPosition_W = CarouselPosition_W - 1
+;IF DoingIndex_M && (RequestedBinPosition_W > MaxBinLocation_W)
+;  THEN RequestedBinPosition_W = 1 
+;IF DoingIndex_M && (RequestedBinPosition_W < 1) 
+;  THEN RequestedBinPosition_W = MaxBinLocation_W   
+;
+;IF DoingM6_M && (CarouselPosition_W == PutBackPosition_W)   
+;  THEN RequestedBinPosition_W = SV_TOOL_NUMBER, 
+;  SET AtPutbackLocation_M, SET WaitingForPutbackComplete_M
+;  
+;IF DoingM6_M && RequestedBinPosition_W - 1 != CarouselPosition_W
+;  THEN SET WTF_M   
+;  
+;IF PutBackPosition_W == 0 THEN RST WaitingForPutbackComplete_M  
+;  
+;IF DoingM6_M && (CarouselPosition_W != PutBackPosition_W) &&
+;  ((PutBackPosition_W != 0) && DoingM6_M) 
+;  THEN RequestedBinPosition_W = PutBackPosition_W, SET DoingPutback_M
+;
+;IF True_M THEN RST DoingIndexMinus_M, RST DoingIndexPlus_M, JMP SetCarouselDirectionStage
+;
+;;==============================================================================
+;                        SetCarouselDirectionStage
+;;==============================================================================
+;;CW 1-2-3
+;IF ((RequestedBinPosition_W > CarouselPosition_W) && 
+; (RequestedBinPosition_W - CarouselPosition_W <= (MaxBinLocation_W / 2))) ||
+; ((RequestedBinPosition_W < CarouselPosition_W) &&
+; (CarouselPosition_W - RequestedBinPosition_W > (MaxBinLocation_W / 2)))
+; THEN RST CarouselCCW_O
+;
+;;CCW 3-2-1
+;IF M18_SV || (((RequestedBinPosition_W < CarouselPosition_W) && 
+; (CarouselPosition_W - RequestedBinPosition_W <= (MaxBinLocation_W / 2))) ||
+; ((RequestedBinPosition_W > CarouselPosition_W) &&
+; (RequestedBinPosition_W - CarouselPosition_W > (MaxBinLocation_W / 2))))
+; THEN SET CarouselCCW_O
+; 
+;IF True_M THEN JMP RotateCarouselStage 
+; 
+;;==============================================================================
+;                             RotateCarouselStage
+;;==============================================================================
+;IF (DoingM6_M || DoingIndex_M) && (RequestedBinPosition_W != CarouselPosition_W) &&
+;  !WaitingForPutbackComplete_M
+;  THEN SET CarouselEnable_O
+;  
+;IF DoingPutback_M && CarouselEnable_O THEN SET WaitingForPutbackComplete_M
+;IF PutbackComplete_SV || !SV_PROGRAM_RUNNING THEN RST DoingPutback_M, RST WaitingForPutbackComplete_M  
+;  
+;IF (RequestedBinPosition_W == CarouselPosition_W)
+;  THEN RST CarouselEnable_O
+;
+;IF (RequestedBinPosition_W == CarouselPosition_W) && DoingM6_M && 
+;  !CarouselEnable_O && !AtPutbackLocation_M
+;  THEN JMP SetRequestedBinPositionStage
+;  
+;IF (RequestedBinPosition_W == CarouselPosition_W) && DoingM6_M &&  
+;  AtPutbackLocation_M && !AtRequestedToolLocation_M && PutbackComplete_SV
+;  THEN SET AtRequestedToolLocation_M, SET ToolChangeComplete_M  
+;  
+;IF ((RequestedBinPosition_W == CarouselPosition_W) && DoingM6_M && AtPutbackLocation_M &&
+;  AtRequestedToolLocation_M && ToolChangeComplete_M && !M6_SV) || SV_STOP
+;  THEN RST RotateCarouselStage, RST CarouselEnable_O, RST SetCarouselDirectionStage,
+;  RST RotateCarouselStage, RST SetRequestedBinPositionStage, RST DoingM6_M, 
+;  RST M6_SV, RST AtPutbackLocation_M, RST AtRequestedToolLocation_M, 
+;  RST ToolChangeComplete_M, PutBackPosition_W = CarouselPosition_W
+;  
+;IF (RequestedBinPosition_W == CarouselPosition_W) && DoingIndex_M
+;  THEN RST DoingIndex_M  
+;
+;;==============================================================================
+;                            ResetCarouselStage
+;;==============================================================================
+;IF SV_STOP || (!SV_PROGRAM_RUNNING && M6_SV) 
+;  THEN RST DoingIndexMinus_M, RST DoingIndexPlus_M, RST DoingIndex_M,
+;  RST CarouselEnable_O, RST SetCarouselDirectionStage, RST RotateCarouselStage,
+;  RST SetRequestedBinPositionStage, RST DoingM6_M, RST M6_SV, RST AtPutbackLocation_M,
+;  RST AtRequestedToolLocation_M, RST ToolChangeComplete_M, RST DoingPutback_M 
+;
+;IF !SV_PROGRAM_RUNNING THEN RST CarouselHomeComplete_M, RST DoingM18_M, 
+;  RST WaitingForPutbackComplete_M, RST PutbackComplete_SV
+;  
+;;================================================================
+;   SafetySwitchInterruptStage
+;;================================================================
 
 IF DoorClosed_I THEN (SafetySwitch_M)
 IF !SafetySwitch_M && (SpinStart_M || KbSpinStart_M || M3_SV || M4_SV)
