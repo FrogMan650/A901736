@@ -1,0 +1,37 @@
+;------------------------------------------------------------------------------
+; Filename: mfunc30.mac
+; Description: Panel Pusher
+; Notes: 
+; Requires: A901736-r5.src
+; Revision Date: 30 JUL 2026
+; Please see TB300 or the following link for tips on writing custom macros.
+; https://www.centroidcnc.com/centroid_diy/downloads/acorn_documentation/centroid_cnc_macro_programming.pdf
+;------------------------------------------------------------------------------
+; Parameters:
+;
+; System Variables:
+;
+; PLC Variables:
+;
+; User Variables:
+;
+;------------------------------------------------------------------------------
+IF #50001                        ;Prevent lookahead from parsing past here
+IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
+
+N100
+
+M5                               ;Turn off Spindle
+M101 /50012                      ;Wait for spindle to stop
+M70								 ;Send spindle head to high position
+G0 X125							 ;Send spindle to starting position for panel pusher
+M94 /75							 ;Request panel pusher down
+G4 P2							 ;Dwell for panel pusher
+M95 /75							 ;Turn off panel pusher down
+G0 X0							 ;Send panel pusher across the table
+M94 /76							 ;Request panel pusher up
+M101 /50019					  	 ;Wait for panel pusher to be up
+M95 /76							 ;Turn off panel pusher up
+M71								 ;Send spindle head to mid position
+
+N1000

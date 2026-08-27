@@ -1,5 +1,5 @@
  ;-------------------------------------------------------------------------------
-; File:         A901736-r4.src
+; File:         A901736-r5.src
 ; Corresponding Schematic: S15182.DWG - 220VAC, SureServo2 Drives
 ;                          S15098.DWG - 440VAC, Yaskawa Drives
 ;                          S14798.DWG - 220VAC, Yaskawa Drives
@@ -19,6 +19,7 @@
 ; Aux  9 Key: Index Carousel +
 
 ; Revisions:
+; 30 Jul 2026 LEK Adding additional outputs for panel pusher
 ; 19 Jun 2026 LEK Adding additional output functionality for Busellato Router
 ; 17 Jun 2026 BJF Added M21/22 macros for ToolUnclampOut_O, added remaining inputs. 
 ; 02 Jun 2026 BJF Configured inputs/outputs with rewire effort
@@ -1511,6 +1512,10 @@ M71_SV							 IS SV_M94_M95_71;SpindleMid_O (M71 on)
 M72_SV							 IS SV_M94_M95_72;SpindleTool_O (M72 on)
 M73_SV							 IS SV_M94_M95_73;DustHoodDown_O
 M74_SV							 IS SV_M94_M95_74;OpenGuard_O
+M75_SV							 IS SV_M94_M95_75;UnloaderDown_O
+M76_SV							 IS SV_M94_M95_76;UnloaderUp_O
+M77_SV							 IS SV_M94_M95_77;RouterEnable_O
+M78_SV							 IS SV_M94_M95_78;DrillEnable_O
 
 M80_SV                           IS SV_M94_M95_80;Carousel In
 M81_SV                           IS SV_M94_M95_81;Carousel Out
@@ -3860,10 +3865,15 @@ IF M71_SV THEN (SpindleMid_O)
 IF M72_SV THEN (SpindleTool_O)
 IF M73_SV THEN (DustHoodDown_O)
 IF M74_SV THEN (OpenGuard_O)
+IF M75_SV THEN (UnloaderDown_O)
+IF M76_SV THEN (UnloaderUp_O)
+IF M77_SV THEN (RouterEnable_O)
+IF M78_SV THEN (DrillEnable_O)
 
-IF UpperSpindleHigh_I && UpperSpindleLow_I THEN (SpindleIsHigh_M)
-IF LowerSpindleHigh_I THEN (SpindleIsMed_M)
-IF LowerSpindleLow_I THEN (SpindleIsLow_M)
+
+IF UpperSpindleHigh_I && UpperSpindleHigh_I THEN (SpindleIsHigh_M)
+IF UpperSpindleLow_I && LowerSpindleHigh_I THEN (SpindleIsMed_M)
+IF UpperSpindleLow_I && LowerSpindleLow_I THEN (SpindleIsLow_M)
 
 IF SpindleMoveComplete_M THEN RST SpindleMoveComplete_M
 
