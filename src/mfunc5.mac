@@ -1,0 +1,25 @@
+;------------------------------------------------------------------------------
+; Filename: mfunc5.mac
+; Description: Stop Spindle
+; Notes: Deactivates M3, M4, M19 (Orient Request), RouterEnable_O, and DrillEnable_O
+; Requires: A901736-r6.src
+; Revision Date: 20 Aug 2026
+; Please see TB300 or the following link for tips on writing custom macros.
+; https://www.centroidcnc.com/centroid_diy/downloads/acorn_documentation/centroid_cnc_macro_programming.pdf
+;------------------------------------------------------------------------------
+; Parameters:
+;
+; System Variables:
+;
+; PLC Variables:
+;
+; User Variables:
+;
+;------------------------------------------------------------------------------
+IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
+
+N100  
+
+M95 /1/2/19/77/78
+
+N1000

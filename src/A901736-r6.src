@@ -1,5 +1,5 @@
  ;-------------------------------------------------------------------------------
-; File:         A901736-r5.src
+; File:         A901736-r6.src
 ; Corresponding Schematic: S15182.DWG - 220VAC, SureServo2 Drives
 ;                          S15098.DWG - 440VAC, Yaskawa Drives
 ;                          S14798.DWG - 220VAC, Yaskawa Drives
@@ -19,6 +19,7 @@
 ; Aux  9 Key: Index Carousel +
 
 ; Revisions:
+; 20 Aug 2026 LEK Added outputs for the drill bank
 ; 30 Jul 2026 LEK Adding additional outputs for panel pusher
 ; 19 Jun 2026 LEK Adding additional output functionality for Busellato Router
 ; 17 Jun 2026 BJF Added M21/22 macros for ToolUnclampOut_O, added remaining inputs. 
@@ -492,28 +493,28 @@ SpindleDACModeBit2_O            IS OUT16 ;Logical only
 ;begin at output 17.
 
 ;PLCADD1616-01
-DustHoodDown_O					IS OUT17  ;SPST Type
-SpindleBlow_O  		            IS OUT18  ;SPST Type
-AirBlow_O                       IS OUT19  ;SPST Type previously ColletBlow_O
-ToolBlow_O                      IS OUT20  ;SPST Type
-Tool01Down_O                    IS OUT21  ;SPST Type
-Tool02Down_O                    IS OUT22  ;SPST Type
-Tool03Down_O                    IS OUT23  ;SPST Type
-Tool04Down_O					IS OUT24  ;SPDT Type
-Tool05Down_O                    IS OUT25  ;SPDT Type
-Tool06Down_O                    IS OUT26  ;SPST Type
-Tool07Down_O                    IS OUT27  ;SPST Type
-Tool08Down_O                    IS OUT28  ;SPST Type
-Tool09Down_O                    IS OUT29  ;SPST Type
-Tool10Down_O                    IS OUT30  ;SPST Type
-Tool11Down_O                    IS OUT31  ;SPST Type
-Tool12Down_O                    IS OUT32  ;SPST Type
+DustHoodDown_O					 IS OUT17  ;SPST Type
+SpindleBlow_O  		             IS OUT18  ;SPST Type
+AirBlow_O                        IS OUT19  ;SPST Type previously ColletBlow_O
+ToolBlow_O                       IS OUT20  ;SPST Type
+Drill01Down_O                    IS OUT21  ;SPST Type
+Drill02Down_O                    IS OUT22  ;SPST Type
+Drill03Down_O                    IS OUT23  ;SPST Type
+Drill04Down_O					 IS OUT24  ;SPDT Type
+Drill05Down_O                    IS OUT25  ;SPDT Type
+Drill06Down_O                    IS OUT26  ;SPST Type
+Drill07Down_O                    IS OUT27  ;SPST Type
+Drill08Down_O                    IS OUT28  ;SPST Type
+Drill09Down_O                    IS OUT29  ;SPST Type
+Drill10Down_O                    IS OUT30  ;SPST Type
+Drill11Down_O                    IS OUT31  ;SPST Type
+Drill12Down_O                    IS OUT32  ;SPST Type
 
 ;PLCADD1616-02
-Tool61Down_O					IS OUT33  ;SPST Type
-Tool62Down_O  		            IS OUT34  ;SPST Type
-Tool71Down_O                    IS OUT35  ;SPST Type
-SawDown_O                       IS OUT36  ;SPST Type
+Drill13Down_O					IS OUT33  ;SPST Type
+Drill14Down_O  		            IS OUT34  ;SPST Type
+Drill15Down_O                   IS OUT35  ;SPST Type
+Drill16Down_O                   IS OUT36  ;SPST Type
 UnloaderDown_O                  IS OUT37  ;SPST Type
 UnloaderUp_O                    IS OUT38  ;SPST Type
 OpenGuard_O                     IS OUT39  ;SPST Type
@@ -523,7 +524,7 @@ ClampArea_O                     IS OUT42  ;SPST Type
 JigArea_O                       IS OUT43  ;SPST Type
 RouterEnable_O                  IS OUT44  ;SPST Type
 DrillEnable_O                   IS OUT45  ;SPST Type
-;spare                          IS OUT46  ;SPST Type
+SawDown_O                       IS OUT46  ;SPST Type
 ;spare                          IS OUT47  ;SPST Type
 Lube_O                          IS OUT48  ;SPST Type
 
@@ -1519,6 +1520,23 @@ M78_SV							 IS SV_M94_M95_78;DrillEnable_O
 
 M80_SV                           IS SV_M94_M95_80;Carousel In
 M81_SV                           IS SV_M94_M95_81;Carousel Out
+
+DrillBank01_SV					 IS SV_M94_M95_111;Drill 1 Tool 11
+DrillBank02_SV					 IS SV_M94_M95_112;Drill 2 Tool 12
+DrillBank03_SV					 IS SV_M94_M95_113;Drill 3 Tool 13
+DrillBank04_SV					 IS SV_M94_M95_114;Drill 4 Tool 14
+DrillBank05_SV					 IS SV_M94_M95_115;Drill 5 Tool 15
+DrillBank06_SV					 IS SV_M94_M95_116;Drill 6 Tool 16
+DrillBank07_SV					 IS SV_M94_M95_117;Drill 7 Tool 17
+DrillBank08_SV					 IS SV_M94_M95_118;Drill 8 Tool 18
+DrillBank09_SV					 IS SV_M94_M95_119;Drill 9 Tool 19
+DrillBank10_SV					 IS SV_M94_M95_120;Drill 10 Tool 20
+DrillBank11_SV					 IS SV_M94_M95_121;Drill 11 Tool 21
+DrillBank12_SV					 IS SV_M94_M95_122;Drill 12 Tool 22
+DrillBank13_SV					 IS SV_M94_M95_123;Drill 13 Tool 23
+DrillBank14_SV					 IS SV_M94_M95_124;Drill 14 Tool 24
+DrillBank15_SV					 IS SV_M94_M95_125;Drill 15 Tool 25
+DrillBank16_SV					 IS SV_M94_M95_126;Drill 16 Tool 26
 
 ;----------------------------------------------------------------
 ;                     Word Definitions (int32)
@@ -3869,6 +3887,23 @@ IF M75_SV THEN (UnloaderDown_O)
 IF M76_SV THEN (UnloaderUp_O)
 IF M77_SV THEN (RouterEnable_O)
 IF M78_SV THEN (DrillEnable_O)
+
+IF DrillBank01_SV THEN (Drill01Down_O)
+IF DrillBank02_SV THEN (Drill02Down_O)
+IF DrillBank03_SV THEN (Drill03Down_O)
+IF DrillBank04_SV THEN (Drill04Down_O)
+IF DrillBank05_SV THEN (Drill05Down_O)
+IF DrillBank06_SV THEN (Drill06Down_O)
+IF DrillBank07_SV THEN (Drill07Down_O)
+IF DrillBank08_SV THEN (Drill08Down_O)
+IF DrillBank09_SV THEN (Drill09Down_O)
+IF DrillBank10_SV THEN (Drill10Down_O)
+IF DrillBank11_SV THEN (Drill11Down_O)
+IF DrillBank12_SV THEN (Drill12Down_O)
+IF DrillBank13_SV THEN (Drill13Down_O)
+IF DrillBank14_SV THEN (Drill14Down_O)
+IF DrillBank15_SV THEN (Drill15Down_O)
+IF DrillBank16_SV THEN (Drill16Down_O)
 
 
 IF UpperSpindleHigh_I && UpperSpindleHigh_I THEN (SpindleIsHigh_M)

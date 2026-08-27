@@ -2,15 +2,15 @@
 ; Filename: mfunc4.mac
 ; Description: Start Spindle CCW
 ; Notes: Displays message to select auto spindle if not selected
-; Requires: CNC12
-; Revision Date: 19 JUL 2023
+; Requires: A901736-r6.src
+; Revision Date: 20 Aug 2026
 ; Please see TB300 or the following link for tips on writing custom macros.
 ; https://www.centroidcnc.com/centroid_diy/downloads/acorn_documentation/centroid_cnc_macro_programming.pdf
 ;------------------------------------------------------------------------------
 ; Parameters:
 ;
 ; System Variables:
-; #4203 = Tool in spindle
+; #4203 = Loaded tool
 ;
 ; PLC Variables:
 ; SpindleAutoManualLED		IS OUT1058	(#61058)
@@ -25,6 +25,7 @@ N100
 
 ;If a drill tool is loaded turn on DrillEnable_O
 IF #4203 > 10 THEN GOTO 200
+;Otherwise turn on RouterEnable_O
 M95 /78							 ;Turn off DrillEnable_O
 M94 /77							 ;Turn on RouterEnable_O
 GOTO 500
@@ -32,6 +33,7 @@ GOTO 500
 N200
 M95 /77							 ;Turn off RouterEnable_O
 M94 /78							 ;Turn on DrillEnable_O
+M94 /[#4203+100]				 ;Turn on loaded drill output
 
 N500
 G4 P0.5							 ;Short dwell to be sure outputs get switched

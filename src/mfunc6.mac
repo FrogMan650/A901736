@@ -2,8 +2,8 @@
 ; Filename: mfunc6.mac
 ; Description: Tool Change Macro
 ; Notes: For A901736
-; Requires: 
-; Revision Date: 19 Jun 2026
+; Requires: A901736-r6.src
+; Revision Date: 20 Aug 2026
 ; Please see TB300 or the following link for tips on writing custom macros.
 ; https://www.centroidcnc.com/centroid_diy/downloads/acorn_documentation/centroid_cnc_macro_programming.pdf
 ; Copyright SMC 2025
@@ -13,7 +13,7 @@
 ;
 ; System Variables:
 ; #4003 = Positioning Mode (G90/G91)
-; #4203 = Tool in spindle
+; #4203 = Loaded tool
 ;
 ; PLC Variables:
 ; AtPutbackLocation_M         IS MEM304 (#70304)
@@ -30,7 +30,8 @@
 ; User Variables:
 ; #101 = Saved Positioning Mode (G90/G91)
 ; #102 = Saved Units of Measure (G20/G21)
-; #107 = New Tool Request Bin Location
+; #107 = Requested tool
+; #150 = Tool in the spindle (nonvolatile memory)
 ;
 ; Return Points:
 ; G28 = Used For ToolCheck Position / M25 Home Positions
@@ -38,6 +39,8 @@
 ;------------------------------------------------------------------------------
 IF #50001                        ;Prevent lookahead from parsing past here
 IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
+
+IF #150 == 0 THEN #150 = 1
 
 ;Setup Defines
 G65 "#400\system\setup_defines.cnc"
@@ -49,16 +52,20 @@ G65 "#400\system\setup_defines.cnc"
 G[<SV_MACHINE_UNITS>]             ;Set Measurement to Machine Units
 G94                               ;Disable Inverse Time
 
-;Skip Rack Mount Tool Change if requested tool in Spindle
+;Skip Rack Mount Tool Change if requested tool is loaded
 IF #107 == #4203 THEN GOTO 1000
 
 ;Skip tool change if invalid tool is requested
-IF #107 > <PARAM_MAX_ATC_BINS> THEN GOTO 800    ;Error Tool Change on Invalid Tool
+IF #107 > 26 THEN GOTO 800    	  ;Error Tool Change on Invalid Tool
+
+;Skip rack mount tool change if drill tool requested
+IF #107 > 10 THEN GOTO 400
 
 ;==============================================================================
 ; Rack Mount Tool Change Program Starts
 ;==============================================================================
 G90
+G52 X0 Y0 Z0					  ;Shift WCS to 0
 M5                                ;Turn off Spindle
 M9                                ;Disable Flood/Mist or DustCollector/VacuumHoldDown
 M70								  ;Send spindle head to high position
@@ -69,21 +76,27 @@ M94 /74							  ;Open tool guard
 M101 /50023						  ;Wait for ToolGuardOpen_I
 ;M101 /70803                      ;Ensure Spindle at Zero Speed, BJF: Commented out 
 M101 /50012                       ;Wait for spindle to stop  BJF: Added
+IF #4203 > 10 THEN M95 /[#4203+100];Disable active drill tool
+M95 /77							  ;Disable RouterEnable_O
+M95 /78							  ;Disable DrillEnable_O
 
 ;M101 /70809                       ;Confirm AirPressure, BJF: Commented out 
 
 ;Skip Putaway if No Tool in Spindle
 IF #4203 == 0 THEN GOTO 250
 
+;Skip tool change if tool requested is already in the spindle
+IF #107 == #150 THEN GOTO 300
+
 ;------------------------------------------------------------------------------
 ; Put Tool Away Section (Fork)
 ;------------------------------------------------------------------------------
 N200
 
-G65 "#400\system\rackmountbins\tool#4203position.cnc" A5 ;Move to Old Tool Clearance Position
+G65 "#400\system\rackmountbins\tool#150position.cnc" A5 ;Move to Old Tool Clearance Position
 M72								 ;Send spindle head to tool position	  
-G65 "#400\system\rackmountbins\tool#4203position.cnc" A4 ;Move Z Down to Infront of Tool Fingers
-G65 "#400\system\rackmountbins\tool#4203position.cnc" A6 ;Engage Fingers
+G65 "#400\system\rackmountbins\tool#150position.cnc" A4 ;Move Z Down to Infront of Tool Fingers
+G65 "#400\system\rackmountbins\tool#150position.cnc" A6 ;Engage Fingers
 M15								 ;Unclamp tool
 G30 G91 Z0                       ;Clear Z from Tool
 
@@ -117,10 +130,30 @@ M70								 ;Raise spindle to travel height
 N300
 IF #50001
 G4 P.2                           ;Dwell to ensure PLC Updates Putback Position
+#150 = #107						 ;Remember which tool is in the spindle
 
 G28 G91 Z0						 ;Move Z Up to Clear
 G90  
 M71								 ;Send spindle head to mid position
+M95 /74							 ;Close tool guard
+M94 /73							 ;Enable DustHoodDown_O
+
+;Prevent lookahead from reaching end of job and assigning putback before
+; location is updated.
+IF #50001
+
+GOTO 950
+
+;==============================================================================
+; Drill bank Tool Change Program Starts
+;==============================================================================
+N400
+IF #50001
+M70								 ;Send spindle head to high position for drill
+G28 G91 Z0						 ;Clear Z from Tool
+IF #4203 > 10 THEN M95 /[#4203+100];Disable active drill tool
+M94 /[#107+100]					 ;Turn on requested drill output
+G65 "#400\system\rackmountbins\tool#107position.cnc" ;Offset WCS based on drill requested
 
 ;Prevent lookahead from reaching end of job and assigning putback before
 ; location is updated.
