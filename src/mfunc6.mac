@@ -13,6 +13,7 @@
 ;
 ; System Variables:
 ; #4003 = Positioning Mode (G90/G91)
+; #4203 = Tool in spindle
 ;
 ; PLC Variables:
 ; AtPutbackLocation_M         IS MEM304 (#70304)
@@ -44,14 +45,14 @@ G65 "#400\system\setup_defines.cnc"
 ;Save Modes & Set Modals for Macro.
 #101 = <SV_POSITIONING_MODE>      ;Save Positioning Mode
 #102 = <SV_UNITS_OF_MEASURE>      ;Save Units of Measure
+#107 = <SV_TOOL_NUMBER>			  ;Set requested tool number
 G[<SV_MACHINE_UNITS>]             ;Set Measurement to Machine Units
 G94                               ;Disable Inverse Time
 
-;Skip Rack Mount Tool Change if Tool in Spindle
-IF <SV_TOOL_NUMBER> == #9976 THEN GOTO 1000
+;Skip Rack Mount Tool Change if requested tool in Spindle
+IF #107 == #4203 THEN GOTO 1000
 
-IF <PARAM_ENHANCED_ATC> > 0 THEN #107 = #[<SV_TOOL_NUMBER> + 17000] ELSE #107 = <SV_TOOL_NUMBER>
-
+;Skip tool change if invalid tool is requested
 IF #107 > <PARAM_MAX_ATC_BINS> THEN GOTO 800    ;Error Tool Change on Invalid Tool
 
 ;==============================================================================
@@ -66,22 +67,23 @@ M101 /50020						  ;Wait for HoodUp_I
 M25                               ;Move to Z-Home Position (Reference #1 Z)
 M94 /74							  ;Open tool guard
 M101 /50023						  ;Wait for ToolGuardOpen_I
-M101 /70803                       ;Ensure Spindle at Zero Speed
+;M101 /70803                      ;Ensure Spindle at Zero Speed, BJF: Commented out 
+M101 /50012                       ;Wait for spindle to stop  BJF: Added
 
-M101 /70809                       ;Confirm AirPressure
+;M101 /70809                       ;Confirm AirPressure, BJF: Commented out 
 
 ;Skip Putaway if No Tool in Spindle
-IF #9976 == 0 && #9431 == 1 THEN GOTO 250
+IF #4203 == 0 THEN GOTO 250
 
 ;------------------------------------------------------------------------------
 ; Put Tool Away Section (Fork)
 ;------------------------------------------------------------------------------
 N200
 
-G65 "#400\system\rackmountbins\tool#9976position.cnc" A5 ;Move to Old Tool Clearance Position
+G65 "#400\system\rackmountbins\tool#4203position.cnc" A5 ;Move to Old Tool Clearance Position
 M72								 ;Send spindle head to tool position	  
-G65 "#400\system\rackmountbins\tool#9976position.cnc" A4 ;Move Z Down to Infront of Tool Fingers
-G65 "#400\system\rackmountbins\tool#9976position.cnc" A6 ;Engage Fingers
+G65 "#400\system\rackmountbins\tool#4203position.cnc" A4 ;Move Z Down to Infront of Tool Fingers
+G65 "#400\system\rackmountbins\tool#4203position.cnc" A6 ;Engage Fingers
 M15								 ;Unclamp tool
 G30 G91 Z0                       ;Clear Z from Tool
 
@@ -93,10 +95,21 @@ N250
 G30 G91 Z0						 ;Clear Z from Tool
 G90
 G65 "#400\system\rackmountbins\tool#107position.cnc" A3 ;Move to New Tool Position
-M15                              ;Unclamp Tool
+;M15                              ;Unclamp Tool, BJF: Commented out 
+
+M94 /15                           ;Request Tool unclamp 
+G4 P.5							  ;Spool up time
+M72								  ;Send spindle pneumatics to loading height					
+
 G65 "#400\system\rackmountbins\tool#107position.cnc" A4 ;Move Z Down to Tool Rack Height
-M16                              ;Clamp Tool
+
+;M16                              ;Clamp Tool, BJF: Commented out
+M95 /15							  ;Clamp Tool, BJF: Added
+G4 P.5							  ;Delay to allow set
+
 G65 "#400\system\rackmountbins\tool#107position.cnc" A7 ;Disengage Fingers
+
+M70								 ;Raise spindle to travel height 
 
 ;------------------------------------------------------------------------------
 ; Set Tool in Spindle
