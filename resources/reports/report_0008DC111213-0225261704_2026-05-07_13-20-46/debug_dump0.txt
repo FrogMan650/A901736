@@ -1,0 +1,16 @@
+
+  Debug dump started 2026-05-07 13:18:54.594
+  MPU11 Software Version : 5.40 (/cnc11/branches/v540_05_point_release R22006 clean)
+  MPU11 Cyclone Version  : 2.66
+   FRAM Version        = 1
+   FRAM init count     = 00000001
+   Reboot count        = 131
+   mpu11ResendRequests = 20
+   nackFailures        = 0
+   keepAliveFailures   = 2
+   resendRollovers     = 0
+   pcResendRequests    = 83
+   packetCRCErrors     = 0
+   featureBits         = 0000_0000_0000_0000
+  Processor is clocked at 528.000 Mhz.
+  RDU: 5A5878EF3E6D320849E76CDB150779BD5FC5672A395CD14F05EF124758930C8C JD739743 DL31

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<options>
+  <useToolLib>1</useToolLib>
+  <noseVector>3</noseVector>
+  <toolLength>0.100000</toolLength>
+  <fileUnits>20</fileUnits>
+  <materialSizeOpacity>0</materialSizeOpacity>
+  <workEnvOpacity>0</workEnvOpacity>
+  <travelLimOpacity>0</travelLimOpacity>
+  <toolWidth>0.500000</toolWidth>
+  <toolHeight>1.000000</toolHeight>
+  <toolOpacity>75</toolOpacity>
+</options>

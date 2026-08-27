@@ -1,0 +1,353 @@
+<!--
+	Title: feature_set.xml
+	Date: 7-18-2025
+	Author: ASP, KM
+	Purpose: XML based information that CNC12 parses into feature_set.htm
+	Copyright SMC 2025
+	
+	Note: Since both XML and HTML are markup languages, they both use a tag system
+	      To include a tag intended to be parsed by the html and not by the xml,
+		  we have to cheat a little bit. Tags intended for html parsing should
+		  start and end with &lt; and &gt; instead of < and > respectively.
+		  Thus we get:
+		  <name>&lt;a href="www.centroidcnc.com"&gt;See the website for more info&lt;/a&gt;</name>
+		  to enter <a href="www.centroidcnc.com">See the website for more info</a>
+		  into the parsed html with a working hyperlink.
+		  Not all modern html tags are supported by CNC12. Please see this list
+		  for supported tags: https://docs.wxwidgets.org/3.2/overview_html.html#overview_html_supptags
+-->
+<features>
+	<feature>
+		<name>Dynamic 3D/2D Run Time Tool Path Graphics (RTG)</name>
+		<shortName>Dynamic 3D/2D Run Time Tool Path Graphics (RTG)</shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+		<display id="0">true</display>
+	</feature>
+	<feature>
+		<name>Improvements and additions to G-Code Backplot with new Display Options menu </name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Improved Software Axis Pairing w/ new easy pair/unpair mcodes M294/M295 </name>
+		<shortName>Improved Software Axis Pairing </shortName>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Up to 8 axes can now be paired together </name>
+		<shortName>Pair up to 8 axes together </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Multiple axes can be slaved to a single master and master-slave axis pairings can be chained together</name>
+		<shortName>Multiple axes slaved to one master, w/ master-slave pairings chainable </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Pairing axes 6,7,8 to any other axes in any combination</name>
+		<shortName>Pair Axes 6,7,8 w/ others in any combination </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Negative soft travel limits allowed with ball screw compensation table data </name>
+		<shortName>Zero-crossing travel limits with screw compensation </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+		<display id="1">true</display>
+	</feature>
+	<feature>
+		<name>Planar Compensation,Machine Position Correction,remove machine bows/bumps/skew </name>
+		<shortName>Planar Compensation </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Unique Individual Planar Compensation position correction tables for both Master and Slave paired axes</name>
+		<shortName>Unique Position compensation tables for paired axes </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Spindle RPM Scaling. For Hi-RPM spindles which don’t operate below a significant RPM </name>
+		<shortName>Spindle RPM Scaling </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Don't use Machine Home and still remember WCS position after a power cycle </name>
+		<shortName>Remember Part Zero after power cycle w/o Homing </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Improved CNC Setup Wizard Speed! Big reduction in CNC control parameter writing time </name>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Control the number of Rows and Columns that make up the Virtual Control Panel (VCP). </name>
+		<shortName>Define VCP # of Rows and Colums </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Improved Plasma/Laser Backup along cut Path operatore command responsiveness(Restart Mode) </name>
+		<version>5.40</version>
+		<requires>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Lathe: Arcs in the XY and YZ planes G-codes: G17 and G19 now supported </name>
+		<shortName>Lathe G17-XY and G19-YZ plane Arcs </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Lathe</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>CNC12 Lathe Graphics now use the new G-code backplot graphics engine as the other variants of CNC12 </name>
+		<shortName>Improved Lathe G code backplot graphics </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Lathe</machine>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Wizard Drag-and-Drop Canned Moveable ATC Rack Control Support</name>
+		<shortName>Canned Wizard Moveable Rack ATC Outputs </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Wireless Touch Probe Feature Support such as Awake and Ready signaling </name>
+		<shortName>Wireless Touch Probe Support </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>MPG/Scale/Encoder real time position offset adjustment for any axis with M291 offset cancel or keep</name>
+		<shortName>In-process axis position adjustment from external source </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Automatic Adaptive Feedrate Modulation based on Spindle RPM </name>
+		<shortName>Adaptive Feedrate Modulation with Spindle RPM </shortName>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Hickory Wizard canned support for Lathe Electric ATC Turrets </name>
+		<version>5.40</version>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Job Run Timer and Estimator with Percentage Complete </name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Output Preference Wizard Menu allows a global command for each output to be issued automatically </name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Big Centroid Application Programming Interface (API) improvements</name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Real time system variable viewing via SystemVariableViewer.exe a Tool for custom macro/api variable debugging. </name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>CNC12 uses Windows Clipboard for its copy/paste operations</name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+	<feature>
+		<name>Added support for the Paper Tools App</name>
+		<requires>
+			<machine>Mill</machine>
+			<machine>Router</machine>
+			<machine>Lathe</machine>
+			<machine>Plasma</machine>
+			<machine>Laser</machine>
+			<tier>Free</tier>
+			<tier>Pro</tier>
+			<tier>Ultimate</tier>
+		</requires>
+	</feature>
+</features>

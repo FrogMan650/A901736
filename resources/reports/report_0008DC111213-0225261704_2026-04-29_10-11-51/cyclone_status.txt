@@ -1,0 +1,419 @@
+CYCLONE INFO
+Wed Apr 22 17:18:39 2026
+miniPLC Error Counters
+  1 00001  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00001 Interrupts     : 00003 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00001
+MPU11 Debug    : 00107
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         11110000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         1
+**************************************************************
+CYCLONE INFO
+Wed Apr 22 17:43:20 2026
+miniPLC Error Counters
+  1 00001  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00001 Interrupts     : 00003 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00001
+MPU11 Debug    : 00223
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         00000000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         0
+**************************************************************
+CYCLONE INFO
+Thu Apr 23 12:30:14 2026
+miniPLC Error Counters
+  1 00000  2 00001  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00000 Interrupts     : 00000 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00000
+MPU11 Debug    : 01386
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         11110000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         1
+**************************************************************
+CYCLONE INFO
+Thu Apr 23 14:10:26 2026
+miniPLC Error Counters
+  1 00001  2 00001  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00000 Interrupts     : 00000 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00000
+MPU11 Debug    : 01477
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         11110000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         1
+**************************************************************
+CYCLONE INFO
+Thu Apr 23 15:53:14 2026
+miniPLC Error Counters
+  1 00001  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00001 Interrupts     : 00004 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00001
+MPU11 Debug    : 01510
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         00000000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         0
+**************************************************************
+CYCLONE INFO
+Fri Apr 24 15:17:38 2026
+miniPLC Error Counters
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00000 Interrupts     : 00000 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00000
+MPU11 Debug    : 02357
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         11110000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         1
+**************************************************************
+CYCLONE INFO
+Mon Apr 27 15:13:43 2026
+miniPLC Error Counters
+  1 00000  2 00001  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00001 Interrupts     : 00003 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00001
+MPU11 Debug    : 04233
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         00000000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         0
+**************************************************************
+CYCLONE INFO
+Tue Apr 28 13:16:08 2026
+miniPLC Error Counters
+  1 00001  2 00001  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00001 Interrupts     : 00003 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00001
+MPU11 Debug    : 00518
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         00000000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         0
+**************************************************************
+CYCLONE INFO
+Tue Apr 28 17:50:00 2026
+miniPLC Error Counters
+  1 00001  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00000 Interrupts     : 00000 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00000
+MPU11 Debug    : 00041
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         00000000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         0
+**************************************************************
+CYCLONE INFO
+Wed Apr 29 10:11:47 2026
+miniPLC Error Counters
+  1 00000  2 00001  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+  9 00000 10 00000 11 00000 12 00000 13 00000 14 00000 15 00000 16 00000
+
+Jog Panel: External 00000 Internal 00000
+PLC:       External 00000 Internal 00000
+
+Shutdowns      : 00000 Interrupts     : 00000 Drivebus       : 00000
+SD             : 00000 PLCIO2         : 00000 Dbg Buffer     : 00000
+Raw Dbg Buffer : 00000 Command Buffer : 00000 Rx Buffer      : 00000
+Rx Max         : 00000 Wiz Max        : 00000 Missed Int     : 00000
+MPU11 Debug    : 00012
+
+Drive Reception Errors
+  1 00000  2 00000  3 00000  4 00000  5 00000  6 00000  7 00000  8 00000
+
+Online Bits      Enabled Bits
+Drivebus
+12345678         12345678
+11110000         00000000
+
+LegacyJog 0
+PLCBus    1      1
+JogLink   0      0
+PLCIO2    0
+
+Expansion board id                              3
+PLCbus PLC fiber active                         1
+PLCbus outputs enabled                          1
+PLCIO2 fiber configuration active               0
+RTK2 fiber configuration active                 0
+Drivebus Drive fiber configuration active       1
+Legacy DC Drive fiber configuration active      0
+Legacy SD1/SD3 Drive fiber configuration active 0
+JOGlink jog panel configuration active          1
+Legacy jog panel configuration active           0
+Cyclone configuration device interface active   0
+Legacy brushless drive boot module active       0
+Drivebus drives enabled                         0

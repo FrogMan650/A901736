@@ -1,0 +1,22 @@
+INP12
+"Waiting for Zero Spindle Speed..."
+INP17
+"Waiting for Spindle Orientation..."
+INP21
+"Waiting for Tool Clamp..."
+INP22
+"Waiting for Tool UnClamp..."
+INP31
+"Waiting for Carousel Out..."
+INP32
+"Waiting for Carousel In..."
+MEM3
+"Starting Tool Change..."
+MEM8
+"Tool Change Complete"
+MEM10
+"Moving Carousel In..."
+MEM11
+"Moving Carousel Out..."
+MEM19
+"Doing Putback..."

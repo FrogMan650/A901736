@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsp_probe_settings>
+  <FileVersion>1.0000000000000000</FileVersion>
+  <min_difference>0.0010000000000000</min_difference>
+  <max_difference>0.0250000000000000</max_difference>
+  <feedrate>20.0000000000000000</feedrate>
+  <max_retries>10</max_retries>
+  <force_feedrate>true</force_feedrate>
+  <accept_mechanical_positions>false</accept_mechanical_positions>
+  <clearing_feedrate>20.0000000000000000</clearing_feedrate>
+  <retry_dwell_time>0.0000000000000000</retry_dwell_time>
+</dsp_probe_settings>

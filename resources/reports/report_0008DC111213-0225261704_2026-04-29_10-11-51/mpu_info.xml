@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mpu_info>
+  <version_number>1</version_number>
+  <DSPVersionMajor>540</DSPVersionMajor>
+  <DSPVersionMinor>5</DSPVersionMinor>
+  <FPGAVersionMajor>2</FPGAVersionMajor>
+  <FPGAVersionMinor>66</FPGAVersionMinor>
+  <Drive index="0">
+    <Type>drive_type_oak</Type>
+    <Version>50</Version>
+  </Drive>
+  <Drive index="1">
+    <Type>drive_type_oak</Type>
+    <Version>50</Version>
+  </Drive>
+  <Drive index="2">
+    <Type>drive_type_oak</Type>
+    <Version>50</Version>
+  </Drive>
+  <Drive index="3">
+    <Type>drive_type_oak</Type>
+    <Version>50</Version>
+  </Drive>
+  <Drive index="4">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="5">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="6">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="7">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="8">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="9">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="10">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="11">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="12">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="13">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="14">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="15">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="16">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="17">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="18">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="19">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="20">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="21">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="22">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="23">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <Drive index="24">
+    <Type>drive_type_none</Type>
+    <Version>0</Version>
+  </Drive>
+  <PLCType>plc_type_plcbus</PLCType>
+  <PLCVersion>50</PLCVersion>
+  <PLCDeviceID>device_id_oak</PLCDeviceID>
+  <PLCInputStatus>
+    <Word index="0">
+      <Description>plc_io_desc_digital_io</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="1">
+      <Description>plc_io_desc_plcadd1616</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="2">
+      <Description>plc_io_desc_plcadd1616</Description>
+      <Port>1</Port>
+    </Word>
+    <Word index="3">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="4">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="5">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="6">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="7">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="8">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="9">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="10">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="11">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="12">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="13">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="14">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="15">
+      <Description>plc_io_desc_adc_dac</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="16">
+      <Description>plc_io_desc_adc_dac</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="17">
+      <Description>plc_io_desc_adc_dac</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="18">
+      <Description>plc_io_desc_adc_dac</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="19">
+      <Description>plc_io_desc_adc_dac</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="20">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="21">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="22">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="23">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="24">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="25">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="26">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="27">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="28">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="29">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="30">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="31">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="32">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="33">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="34">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="35">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="36">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="37">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="38">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="39">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="40">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="41">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="42">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="43">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="44">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="45">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="46">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="47">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+  </PLCInputStatus>
+  <PLCOutputStatus>
+    <Word index="0">
+      <Description>plc_io_desc_digital_io</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="1">
+      <Description>plc_io_desc_plcadd1616</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="2">
+      <Description>plc_io_desc_plcadd1616</Description>
+      <Port>1</Port>
+    </Word>
+    <Word index="3">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="4">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="5">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="6">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="7">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="8">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="9">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="10">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="11">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="12">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="13">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="14">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="15">
+      <Description>plc_io_desc_adc_dac</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="16">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="17">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="18">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="19">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="20">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="21">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="22">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="23">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="24">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="25">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="26">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="27">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="28">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="29">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="30">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="31">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="32">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="33">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="34">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="35">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="36">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="37">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="38">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="39">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="40">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="41">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="42">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="43">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="44">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="45">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="46">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+    <Word index="47">
+      <Description>plc_io_desc_unknown</Description>
+      <Port>0</Port>
+    </Word>
+  </PLCOutputStatus>
+  <plcProgramChecksum>1236150721</plcProgramChecksum>
+  <plcProgramReceived>true</plcProgramReceived>
+</mpu_info>

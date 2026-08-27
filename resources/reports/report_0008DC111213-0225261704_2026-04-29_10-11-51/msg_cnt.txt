@@ -1,0 +1,40 @@
+102 Error initializing CPU...cannot continue.            14
+111 Z - Trav Limit modified: 0.0000 -> -18.5000          23
+199 CNC Started                                         123
+204 Exiting CNC...Normal Exit (66)                       31
+302 Moving...                                           527
+304 MDI...                                               53
+306 Job finished                                         32
+307 Operator abort:  job cancelled                       32
+308 Waiting for input #769 (M101)                         1
+313 Waiting for dwell time                               68
+325 Limit:  job cancelled                                 2
+327 Fault:  job cancelled                                92
+335 Emergency stop released                             285
+340 Z+ limit (#50006) cleared                           464
+347 Reset Cleared                                       109
+406 Emergency stop detected                             274
+407 Z+ limit (#50006) tripped                           516
+410 Z axis(3) position error                             45
+412 MPG1 encoder error                                  167
+422 Check Jog Panel cable                                 1
+452 Ethernet Communication Error, CNCPC to control        1
+511 Missing parameter, line 1023                         13
+777 Z Pitch modified:    1.0000 ->    2.5400 (turn       15
+907 Y axis travel exceeded                               71
+930 Log Level Configuration file not found... Crea        1
+933 Log file initialized                                  1
+944 MPU requested resend # 1                             12
+945 PC requested resend # 1                              66
+946 PC resending # 2                                     11
+998 Focus Watchdog attempting to return focus from     1328
+999 Parm #411 modified: 2.00000 -> 1.00000               24
+4099 Message Cleared                                    194
+5041 RAPID_OVERRIDE_ENABLED                               3
+5042 RAPID_OVERRIDE_DISABLED                              4
+9028 SPINDLE FAULT!                                      76
+9029 Jog Panel Communication In Fault                     1
+9039 Software Exited, Cycle E-Stop/Reset to Contin       23
+9060 LOW AIR FAULT                                       37
+9153 Mini PLC 1 Communication Fault                      70
+9154 Mini PLC 2 Communication Fault                       8

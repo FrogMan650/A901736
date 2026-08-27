@@ -1,0 +1,15 @@
+;=============================================
+;This is the Mill GCode program that will be
+;run when the Cycle Start button is pressed in
+;the PID settings menu.
+;=============================================
+G20       ; Inch mode
+G90       ; Absolute positioning mode
+G64 off   ; Turn off G-code Smoothing
+F100      ; Set the feedrate
+G4 P0.1   ; Delay for 0.1 second
+G1 X0.0   ; Move to our starting position
+G4 P0.1   ; Delay for 0.1 second
+G1 X0.5   ; Execute a short move
+G4 P0.1   ; Delay for 0.1 second
+M102      ; Rerun the program

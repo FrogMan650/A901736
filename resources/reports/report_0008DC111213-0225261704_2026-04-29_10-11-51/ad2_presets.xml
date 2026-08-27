@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ad2_presets>
+  <SoftwareVersion>CNC12 Version 5.40.05</SoftwareVersion>
+  <Version>1</Version>
+  <preset index="1">
+    <fkey_label>Precision Mill</fkey_label>
+    <value param="221">1.0000000000000000</value>
+    <value param="222">0.0010000000000000</value>
+    <value param="223">800.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">10.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="2">
+    <fkey_label>Contouring Mill</fkey_label>
+    <value param="221">10.0000000000000000</value>
+    <value param="222">0.0020000000000000</value>
+    <value param="223">800.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">20.0000000000000000</value>
+    <value param="227">1.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="3">
+    <fkey_label>Precision Router</fkey_label>
+    <value param="221">10.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">800.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">10.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="4">
+    <fkey_label>Contouring Router</fkey_label>
+    <value param="221">10.0000000000000000</value>
+    <value param="222">0.0100000000000000</value>
+    <value param="223">800.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">20.0000000000000000</value>
+    <value param="227">1.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="5">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="6">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="7">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="8">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="9">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="10">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="11">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="12">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="13">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="14">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="15">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="16">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="17">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="18">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="19">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="20">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="21">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="22">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="23">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="24">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="25">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="26">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="27">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="28">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="29">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="30">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="31">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="32">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="33">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="34">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="35">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="36">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="37">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="38">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="39">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="40">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="41">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="42">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="43">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="44">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="45">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="46">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="47">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="48">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="49">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="50">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="51">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="52">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="53">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="54">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="55">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="56">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="57">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="58">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="59">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="60">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="61">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="62">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="63">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="64">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="65">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="66">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="67">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="68">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="69">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="70">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="71">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="72">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="73">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="74">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="75">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="76">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="77">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="78">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="79">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="80">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="81">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="82">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="83">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="84">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="85">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="86">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="87">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="88">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="89">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="90">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="91">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="92">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="93">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="94">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="95">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="96">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="97">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="98">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+  <preset index="99">
+    <fkey_label></fkey_label>
+    <value param="221">0.0000000000000000</value>
+    <value param="222">0.0050000000000000</value>
+    <value param="223">400.0000000000000000</value>
+    <value param="224">0.0000000000000000</value>
+    <value param="225">0.0000000000000000</value>
+    <value param="226">1.0000000000000000</value>
+    <value param="227">95.0000000000000000</value>
+    <value param="228">0.0000000000000000</value>
+    <value param="230">1.0000000000000000</value>
+    <value param="231">1.0000000000000000</value>
+  </preset>
+</ad2_presets>

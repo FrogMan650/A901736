@@ -1,0 +1,105 @@
+;------------------------------------------------------------------------------
+; Filename: mfunc6.mac
+; Description: Tool Change Macro
+; Notes:
+; Requires: CNC12 V5.02
+; Revision Date: 19 JUL 2023
+; Please see TB300 or the following link for tips on writing custom macros.
+; https://www.centroidcnc.com/centroid_diy/downloads/acorn_documentation/centroid_cnc_macro_programming.pdf
+;------------------------------------------------------------------------------
+; Parameters:
+;
+; System Variables:
+; #4120 : Tool Number (T)
+;
+; PLC Variables:
+; ZeroSpeed_I                     IS INP12  (#50012)
+; OrientComplete_I                IS INP17  (#50017)
+; ToolClamped_I                   IS INP21  (#50021)
+; ToolUnclamped_I                 IS INP22  (#50022)
+; CarouselIsOut_I                 IS INP31  (#50031)
+; CarouselIsIn_I                  IS INP32  (#50032)
+; AtPutbackLocation_M             IS MEM304 (#70304)
+; ToolChangeComplete_M            IS MEM305 (#70305)
+; AtRequestedToolLocation_M       IS MEM311 (#70311)
+; CarouselPosition_W              IS W10    (#96010)
+; RequestedBinPosition_W          IS W11    (#96011)
+; SvToolNum_W                     IS W14    (#96014)
+; PutBackPosition_W               IS W15    (#96015)
+;
+; User Variables:
+;
+;------------------------------------------------------------------------------
+
+;Skip if graphing or searching
+IF #4202 || #4201 THEN GOTO 600
+
+IF #50001                        					;Prevent lookahead
+M109 /1/2											;Disable overrides
+M5                                                  ;Command 0 speed
+M9                                                  ;Turn off coolant
+M107                                                ;Send tool number 
+G4 P1
+M94 /8                                              ;Request tool change
+M107                                                ;Send tool number  
+M101 /50012                                         ;Wait for 0 speed
+M19                                                 ;Orient spindle
+IF #50001                        					;Prevent lookahead
+G4P1    
+M101 /50017                                         ;Wait for tool to orient
+IF #50001                        					;Prevent lookahead
+IF #96015 == 0 THEN GOTO 100                        ;Skip if no tool to putback
+IF #50001                        					;Prevent lookahead
+G30 G91 Z0                                          ;Move Z to tool change position
+G90
+IF #50001                        					;Prevent lookahead
+M101 /50017                                         ;Confirm spindle is oriented
+M101 /70304                                         ;Wait for carousel at putback location
+G4 P.25                                             ;Wait for 250 milli   
+M101 /50017                                         ;Confirm spindle is oriented
+M80                                                 ;Request carousel in                                            
+M101 /50032                                         ;Wait for carousel is in
+IF #50001                        					;Prevent lookahead
+#101 = #96010                                       ;Carousel Position
+#102 = #96011                                       ;Req  Position
+#103 = #96015                                       ;putlocation
+#104 = #4120                                        ;tool num 4120
+#105 = #96014                                       ;tool num (sv_tool) 
+;IF [#101 != #103] || [#102 != #105] || [#101 != [#102 - 1]] THEN M225 #100 "Carousel Position = %.0f, Req Pos = %.0f, putback loc = %.0f,\n tool num = %.0f, svtoolnum = %.0f" #101 #102 #103 #104 #105
+;M94 /41                                             ;Report tool info
+IF #50001                        					;Prevent lookahead
+
+M15                                                 ;Unclamp tool
+M101 /50022                                         ;Wait for tool unclamped
+    
+N100 
+
+IF #50001                        					;Prevent lookahead
+G53 Z0                                              ;Raise head to clearance
+IF #50001                        					;Prevent lookahead
+M94 /40                                             ;Set PutBackComplete 
+IF #50001                        					;Prevent lookahead
+M101 /70311                                         ;Wait for AtRequestedToolLocation_M
+IF #50001
+M95 /40                         					;Prevent lookahead
+IF !#50022 THEN M101 /50017                         ;Confirm spindle is oriented if not unclamped
+M80                                                 ;Request carousel in                                            
+M101 /50032                                         ;Wait for carousel is in
+M15                                                 ;Unclamp tool
+M101 /50022                                         ;Wait for tool unclamped
+G30 G91 Z0                                          ;Move Z to tool change position
+G90
+IF #50001                        					;Prevent lookahead
+M16                                                 ;Clamp tool
+IF #50001                        					;Prevent lookahead
+M5													;Turn off spindle
+IF #50001                        					;Prevent lookahead
+M101 /50021                                         ;Wait for tool clamped
+M81                                                 ;Move carousel out away from spindle
+M101 /50031                                         ;Wait for carousel is out
+M101 /70305                                         ;Wait for toolchangecomplete_m
+M95 /8                                              ;Reset toolchange request
+
+M108 /1/2
+
+N600

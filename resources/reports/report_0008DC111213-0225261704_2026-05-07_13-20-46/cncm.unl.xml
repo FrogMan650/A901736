@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Special_Unlocks>
+  <SoftwareVersion>CNC12 Version 5.40 Rev 05</SoftwareVersion>
+  <Version>1</Version>
+  <special index="0">
+    <number>300</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="1">
+    <number>200</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="2">
+    <number>201</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="3">
+    <number>202</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="4">
+    <number>203</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="5">
+    <number>204</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="6">
+    <number>205</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="7">
+    <number>206</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="8">
+    <number>207</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="9">
+    <number>208</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="10">
+    <number>209</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="11">
+    <number>400</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="12">
+    <number>401</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="13">
+    <number>210</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="14">
+    <number>232</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="15">
+    <number>211</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="16">
+    <number>224</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="17">
+    <number>225</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="18">
+    <number>226</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="19">
+    <number>500</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="20">
+    <number>510</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="21">
+    <number>212</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="22">
+    <number>213</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="23">
+    <number>214</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="24">
+    <number>215</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="25">
+    <number>216</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="26">
+    <number>217</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="27">
+    <number>218</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="28">
+    <number>219</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="29">
+    <number>220</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="30">
+    <number>221</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="31">
+    <number>297</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="32">
+    <number>298</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="33">
+    <number>299</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="34">
+    <number>296</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="35">
+    <number>295</number>
+    <value>22526.1703999999990629</value>
+  </special>
+  <special index="36">
+    <number>222</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="37">
+    <number>223</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="38">
+    <number>233</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="39">
+    <number>301</number>
+    <value>0.0000000000000000</value>
+  </special>
+  <special index="40">
+    <number>302</number>
+    <value>0.0000000000000000</value>
+  </special>
+</Special_Unlocks>
