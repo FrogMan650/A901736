@@ -1,11 +1,11 @@
 ; PLC program compiled by MPUCOMP 5.40 Rev 03
-; Source file : A901736-r2.src
-; File date   : Fri May  8 16:25:05 2026
-; Compiled    : Fri May  8 16:22:34 2026
-; Checksums   : 3739AA0C 97693482 6E539EF1 DE943809
+; Source file : A901736-r4.src
+; File date   : Mon Jun 22 12:24:49 2026
+; Compiled    : Mon Jun 22 12:33:29 2026
+; Checksums   : DB050DD1 409654D4 EB17D0A5 A24B813C
 ;
 ;-  ;-------------------------------------------------------------------------------
-;- ; File:         A901736-r2.src
+;- ; File:         A901736-r4.src
 ;- ; Corresponding Schematic: S15182.DWG - 220VAC, SureServo2 Drives
 ;- ;                          S15098.DWG - 440VAC, Yaskawa Drives
 ;- ;                          S14798.DWG - 220VAC, Yaskawa Drives
@@ -25,6 +25,9 @@
 ;- ; Aux  9 Key: Index Carousel +
 ;- 
 ;- ; Revisions:
+;- ; 19 Jun 2026 LEK Adding additional output functionality for Busellato Router
+;- ; 17 Jun 2026 BJF Added M21/22 macros for ToolUnclampOut_O, added remaining inputs. 
+;- ; 02 Jun 2026 BJF Configured inputs/outputs with rewire effort
 ;- ; 08 May 2026 LEK Added Busellato Router inputs and outputs
 ;- ; 08 Jan 2026 CTB Corrected VCP Jog Keys under JogKeysInvert2Stage and JogKeysSwapAndInvert2Stage.
 ;- ; 12 Dec 2025 CTB Fixed MPG_LED_OUT_O being omitted from MPGLED_O Logic.
@@ -287,36 +290,53 @@
 ;- Ax2_PlusLimitOk_I               IS INP4
 ;- Ax3_MinusLimitOk_I              IS INP5
 ;- Ax3_PlusLimitOk_I               IS INP6
-;- RotaryTableHome_I               IS INP7
-;- DoorClosed_I                    IS INP8
-;- ;LubeOk_I                       IS INP9  ;Lube_O is "ok" when input is closed
-;- SpinAgree_I                     IS INP9  ;Added 260501
+;- ;spare                          IS INP7
+;- ;spare                          IS INP8
+;- VFDSpinAgree_I                  IS INP9  
 ;- SpindleInverterOk_I             IS INP10 ;Inverter is "ok" when input is closed
 ;- EStopOk_I                       IS INP11
-;- ZeroSpeed_I                     IS INP12
-;- SpinLowRange_I                  IS INP13
-;- SpinMedRange_I                  IS INP14
-;- SpinHighRange_I                 IS INP15
-;- ;spare                        	IS INP16
+;- ZeroSpeed_I                     IS INP12 ;VFD Zero
+;- UpperSpindleHigh_I              IS INP13
+;- LowerSpindleHigh_I              IS INP14
+;- UpperSpindleLow_I               IS INP15
+;- LowerSpindleLow_I             	IS INP16
 ;- 
 ;- ;If a PLC expansion board (PLCADD1616) is used, the additional inputs will
 ;- ;begin at input 17.
-;- UpperSpindleHigh_I              IS INP17
-;- UpperSpindleLow_I               IS INP18
-;- LowerSpindleHigh_I              IS INP19
-;- LowerSpindleLow_I               IS INP20
-;- ToolClamped_I                   IS INP21
-;- ToolUnclamped_I                 IS INP22
-;- ToolRelease_I                   IS INP23
-;- ToolCounter_I                   IS INP24
-;- ;spare                          IS INP25
-;- ;spare                          IS INP26
-;- ;spare                          IS INP27
-;- CarouselAtHome_I                IS INP28
-;- ;spare                          IS INP29
-;- ;spare                          IS INP30
-;- CarouselIsOut_I                 IS INP31
-;- CarouselIsIn_I                  IS INP32
+;- ToolClamped_I                   IS INP17 ;previously ColletClosed_I
+;- SenseZeroSpeed_I                IS INP18 ;Still troubleshooting
+;- UnloaderUp_I                    IS INP19
+;- HoodUp_I                        IS INP20
+;- AirPressureOk_I                 IS INP21
+;- FootPedal_I                     IS INP22
+;- ToolGuardOpen_I                 IS INP23
+;- Tool71High_I                    IS INP24
+;- Blade91High_I                   IS INP25
+;- Tool61High_I                    IS INP26
+;- Tool62High_I                    IS INP27
+;- VacuumOK_I                      IS INP28
+;- Unknown_I                       IS INP29
+;- ToolUnclamped_I                 IS INP30 ;previously ColletOpen_I
+;- ;spare                          IS INP31
+;- ;spare                          IS INP32
+;- 
+;- ;PLCADD1616-02 Inputs
+;- ;spare                          IS INP33
+;- ;spare                          IS INP34
+;- CarouselIsIn_I                  IS INP35
+;- CarouselIsOut_I                 IS INP36
+;- ;spare                          IS INP37
+;- CarouselAtHome_I                IS INP38
+;- ToolCounter_I                   IS INP39
+;- ToolRelease_I                   IS INP40
+;- ;spare                          IS INP41
+;- PanelPusherUp_I                 IS INP42
+;- SpinHighRange_I                 IS INP43
+;- SpinMedRange_I                  IS INP44
+;- SpinLowRange_I                  IS INP45
+;- LubeOk_I                        IS INP46
+;- DoorClosed_I                    IS INP47
+;- RotaryTableHome_I               IS INP48
 ;- 
 ;- DriveAnalogInput1_I             IS INP241; 16 bit. Read on INP241-256
 ;- DriveAnalogInput2_I             IS INP257; 16 bit. Read on INP257-272
@@ -446,11 +466,11 @@
 ;- ;       Note: Outputs 10 through 16 are physically unavailable
 ;- ;----------------------------------------------------------------
 ;- NoFaultOut_O                    IS OUT1  ;SPST Type
-;- ToolUnclampOut_O                IS OUT2  ;SPST Type
-;- ;spare                          IS OUT3  ;SPST Type
-;- ;spare                          IS OUT4  ;SPST Type
+;- SpindleUp_O                     IS OUT2  ;SPST Type
+;- SpindleMid_O                    IS OUT3  ;SPST Type
+;- SpindleTool_O                   IS OUT4  ;SPST Type
 ;- InverterResetOut_O              IS OUT5  ;SPST Type
-;- ;spare                          IS OUT6  ;SPST Type
+;- ToolUnclampOut_O                IS OUT6  ;SPST Type
 ;- SpindleEnableOut_O              IS OUT7  ;SPST Type
 ;- SpindleDirectionOut_O           IS OUT8  ;SPDT Type
 ;- ZBrakeRelease_O                 IS OUT9  ;SPDT Type
@@ -475,22 +495,42 @@
 ;- 
 ;- ;If a PLC expansion board (PLCADD1616) is used, the additional inputs will
 ;- ;begin at output 17.
-;- FrontFence_O					IS OUT17  ;SPST Type
-;- LeftFence_O  		            IS OUT18  ;SPST Type
-;- VacEnable_O                     IS OUT19  ;SPST Type
-;- DustHoodDown_O                  IS OUT20  ;SPST Type
-;- SpindleUp_O                     IS OUT21  ;SPST Type
-;- SpindleMid_O                    IS OUT22  ;SPST Type
-;- SpindleTool_O                   IS OUT23  ;SPST Type
-;- ClampArea_O						IS OUT24  ;SPDT Type
-;- ;spare                          IS OUT25  ;SPDT Type
-;- ;spare                          IS OUT26  ;SPST Type
-;- ;spare                          IS OUT27  ;SPST Type
-;- ;spare                          IS OUT28  ;SPST Type
-;- ;spare                          IS OUT29  ;SPST Type
-;- ;spare                          IS OUT30  ;SPST Type
-;- ;spare                          IS OUT31  ;SPST Type
-;- AirBlow_O                       IS OUT32  ;SPST Type
+;- 
+;- ;PLCADD1616-01
+;- DustHoodDown_O					IS OUT17  ;SPST Type
+;- SpindleBlow_O  		            IS OUT18  ;SPST Type
+;- AirBlow_O                       IS OUT19  ;SPST Type previously ColletBlow_O
+;- ToolBlow_O                      IS OUT20  ;SPST Type
+;- Tool01Down_O                    IS OUT21  ;SPST Type
+;- Tool02Down_O                    IS OUT22  ;SPST Type
+;- Tool03Down_O                    IS OUT23  ;SPST Type
+;- Tool04Down_O					IS OUT24  ;SPDT Type
+;- Tool05Down_O                    IS OUT25  ;SPDT Type
+;- Tool06Down_O                    IS OUT26  ;SPST Type
+;- Tool07Down_O                    IS OUT27  ;SPST Type
+;- Tool08Down_O                    IS OUT28  ;SPST Type
+;- Tool09Down_O                    IS OUT29  ;SPST Type
+;- Tool10Down_O                    IS OUT30  ;SPST Type
+;- Tool11Down_O                    IS OUT31  ;SPST Type
+;- Tool12Down_O                    IS OUT32  ;SPST Type
+;- 
+;- ;PLCADD1616-02
+;- Tool61Down_O					IS OUT33  ;SPST Type
+;- Tool62Down_O  		            IS OUT34  ;SPST Type
+;- Tool71Down_O                    IS OUT35  ;SPST Type
+;- SawDown_O                       IS OUT36  ;SPST Type
+;- UnloaderDown_O                  IS OUT37  ;SPST Type
+;- UnloaderUp_O                    IS OUT38  ;SPST Type
+;- OpenGuard_O                     IS OUT39  ;SPST Type
+;- LeftFence_O 					IS OUT40  ;SPDT Type
+;- FrontFence_O                    IS OUT41  ;SPDT Type
+;- ClampArea_O                     IS OUT42  ;SPST Type
+;- JigArea_O                       IS OUT43  ;SPST Type
+;- RouterEnable_O                  IS OUT44  ;SPST Type
+;- DrillEnable_O                   IS OUT45  ;SPST Type
+;- ;spare                          IS OUT46  ;SPST Type
+;- ;spare                          IS OUT47  ;SPST Type
+;- Lube_O                          IS OUT48  ;SPST Type
 ;- 
 ;- ; These bits control the actual analog hardware output on the OAK.
 ;- ; Output = 16bit (0-32768) 0-10VDC.
@@ -1462,7 +1502,7 @@
 ;- ;                                IS SV_M94_M95_6 ;
 ;- ;                                IS SV_M94_M95_7 ;
 ;- M6_SV                            IS SV_M94_M95_8;Tool Change Request
-;- M15_SV                           IS SV_M94_M95_15;Unclamp Tool
+;- M15_SV                           IS SV_M94_M95_15;Unclamp Tool (M15 unclamp M16 clamp)
 ;- M18_SV                           IS SV_M94_M95_18;ATC Initialization
 ;- M19_SV                           IS SV_M94_M95_19;Orient Spindle
 ;- PutbackComplete_SV               IS SV_M94_M95_40;PutbackComplete_SV
@@ -1475,6 +1515,8 @@
 ;- M70_SV							 IS SV_M94_M95_70;SpindleUp_O (M70 on)
 ;- M71_SV							 IS SV_M94_M95_71;SpindleMid_O (M71 on)
 ;- M72_SV							 IS SV_M94_M95_72;SpindleTool_O (M72 on)
+;- M73_SV							 IS SV_M94_M95_73;DustHoodDown_O
+;- M74_SV							 IS SV_M94_M95_74;OpenGuard_O
 ;- 
 ;- M80_SV                           IS SV_M94_M95_80;Carousel In
 ;- M81_SV                           IS SV_M94_M95_81;Carousel Out
@@ -1985,12 +2027,12 @@
 ;- ; running for MMM minutes is to prevent lubing when the user leaves for the
 ;- ; weekend, leaving the machine on and E-stop disengaged.
 ;- 
-;- ;IF SV_PROGRAM_RUNNING THEN SET Lube_O, RST LubeM_T
-;- ;IF !SV_PROGRAM_RUNNING THEN LubeM_T = LubeM_W, SET LubeM_T
-;- ;IF LubeM_T || SV_STOP THEN RST Lube_O
+;- IF SV_PROGRAM_RUNNING THEN SET Lube_O, RST LubeM_T
+;- IF !SV_PROGRAM_RUNNING THEN LubeM_T = LubeM_W, SET LubeM_T
+;- IF LubeM_T || SV_STOP THEN RST Lube_O
 ;- 
 ;- ;=============================================================================
-;- ;                        LubeUsePLCTimersStage
+;-                         LubeUsePLCTimersStage
 ;- ;=============================================================================
 ;- ;
 ;- ; METHOD 2 (SS != 0) For lube pumps that do not have internal timers.
@@ -2013,15 +2055,15 @@
 ;- ; possible with frequent use of E-stop that a lube cycle is cut short.
 ;- ;
 ;- 
-;- ;IF SV_PROGRAM_RUNNING  THEN LubeM_T = LubeM_W, SET LubeM_T
-;- ;IF !SV_PROGRAM_RUNNING THEN (StopRunningPD_PD)
-;- ;IF StopRunningPD_PD THEN LubeAccumTime_W = LubeAccumTime_W + LubeM_T, RST LubeM_T
-;- ;IF LubeM_T || (LubeAccumTime_W + LubeM_T > LubeM_W)
-;- ;  THEN SET Lube_O, LubeS_T = LubeS_W, SET LubeS_T, RST LubeM_T, LubeAccumTime_W = 0
-;- ;IF LubeS_T || SV_STOP THEN RST Lube_O, RST LubeS_T
+;- IF SV_PROGRAM_RUNNING  THEN LubeM_T = LubeM_W, SET LubeM_T
+;- IF !SV_PROGRAM_RUNNING THEN (StopRunningPD_PD)
+;- IF StopRunningPD_PD THEN LubeAccumTime_W = LubeAccumTime_W + LubeM_T, RST LubeM_T
+;- IF LubeM_T || (LubeAccumTime_W + LubeM_T > LubeM_W)
+;-   THEN SET Lube_O, LubeS_T = LubeS_W, SET LubeS_T, RST LubeM_T, LubeAccumTime_W = 0
+;- IF LubeS_T || SV_STOP THEN RST Lube_O, RST LubeS_T
 ;- 
 ;- ;=============================================================================
-;- ;                        KeyboardEventsStage
+;-                         KeyboardEventsStage
 ;- ;=============================================================================
 ;- ; This stage handles functions that are required for menu navigation
 ;- ; by CNC11, require multiple keypresses and/or need to be interlocked
@@ -2044,9 +2086,9 @@
 ;- ; toggle for Fast/Slow jog should not activate, this key combination is used
 ;- ; by menus in CNC12 and should not be acted on by the PLC unless that specific
 ;- ; combination is required for the action.
-;- ;IF Kb_L_Shift_SV || Kb_R_Shift_SV THEN (KbShiftPressed_M)
-;- ;IF Kb_L_Ctrl_SV || Kb_R_Ctrl_SV THEN (KbCtrlPressed_M)
-;- ;IF Kb_L_Alt_SV || Kb_R_Alt_SV THEN (KbAltPressed_M)
+;- IF Kb_L_Shift_SV || Kb_R_Shift_SV THEN (KbShiftPressed_M)
+;- IF Kb_L_Ctrl_SV || Kb_R_Ctrl_SV THEN (KbCtrlPressed_M)
+;- IF Kb_L_Alt_SV || Kb_R_Alt_SV THEN (KbAltPressed_M)
 ;- 
 ;- ;-------------------------Not interlocked------------------------
 ;- ; The code for cycle cancel has been moved to the main stage.
@@ -3822,6 +3864,8 @@
 ;- IF M70_SV THEN (SpindleUp_O)
 ;- IF M71_SV THEN (SpindleMid_O)
 ;- IF M72_SV THEN (SpindleTool_O)
+;- IF M73_SV THEN (DustHoodDown_O)
+;- IF M74_SV THEN (OpenGuard_O)
 ;- 
 ;- IF UpperSpindleHigh_I && UpperSpindleLow_I THEN (SpindleIsHigh_M)
 ;- IF LowerSpindleHigh_I THEN (SpindleIsMed_M)
@@ -4992,7 +5036,76 @@
 0003E879
 00000208
 00230240
-00C30C42
+00C00F42
+00100073
+00000043
+002F002D
+000C0036
+00100073
+00000004
+00000043
+003D0023
+000C0040
+000C0031
+000C0049
+00068073
+00000002
+00000043
+002F0032
+00D02542
+00100073
+00000043
+003D0023
+000C0040
+000C0031
+00100073
+00000004
+00000043
+00220048
+00220027
+00000043
+00000023
+000C003B
+00000006
+0000003C
+000C0036
+000C0049
+00000023
+000C003B
+00000006
+003D0023
+00000017
+00000002
+00000043
+002F002D
+003E0023
+000D0040
+000D0031
+000C0036
+00000079
+0000003C
+000D0049
+00068073
+00000002
+00000043
+002F0032
+000D0036
+00A31B42
+00FB0073
+01060073
+00000002
+00000043
+007B0047
+010D0073
+01140073
+00000002
+00000043
+007A0047
+010F0073
+01110073
+00000002
+00000043
+007C0047
 00DB0073
 007B0020
 00000004
@@ -8322,7 +8435,7 @@
 00000043
 00000479
 003F003C
-000C001E
+002C001E
 00000043
 00000179
 003F003C
@@ -10524,34 +10637,40 @@ D2F1A9FC
 00000043
 003A0023
 00358071
-0033D242
+0033D842
 014B0073
 00000043
-00110046
+00270046
 014D0073
 00000043
-00100046
+00280046
 014F0073
 00000043
-00170046
+00290046
 01530073
 00000043
-00140046
+00010046
 01540073
 00000043
-00150046
+00020046
 01550073
 00000043
-00160046
-0010001E
-0011001E
+00030046
+01560073
+00000043
+00100046
+01570073
+00000043
+00260046
+000C001E
+000E001E
 00000001
 00000043
 02930047
-0012001E
+000D001E
 00000043
 02940047
-0013001E
+000F001E
 00000043
 02950047
 02960020
@@ -11467,31 +11586,31 @@ D2F1A9FC
 00000004
 000B001E
 00000001
-0016001E
+0027001E
 000E0073
 00100073
 00000001
 00000002
 00000001
 00000043
-0001002D
+0005002D
 0131002E
 00060031
-0001001F
+0005001F
 00000043
-001F0046
+00120046
 01310020
-0015001E
+001D001E
 00000001
 00000043
 00060036
-0016001E
+0027001E
 00000004
 000E0073
 00000004
 00000001
 00000043
-00010032
+00050032
 01310033
 00060036
 00100073
@@ -11581,7 +11700,7 @@ D2F1A9FC
 012B002E
 0010002F
 00F02942
-0007001E
+002E001E
 00000043
 00170047
 00170020
@@ -11742,4 +11861,4 @@ D2F1A9FC
 00000000
 000000FF
 000000FF
-4A666C96
+4B865BAB

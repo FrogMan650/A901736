@@ -1,3 +1,3 @@
 cd .\src
-..\resources\mpucomp.exe A901736-r2.src mpu.plc
+..\resources\mpucomp.exe A901736-r4.src mpu.plc
 pause

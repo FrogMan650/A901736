@@ -1,0 +1,126 @@
+;------------------------------------------------------------------------------
+; Filename: mfunc6.mac
+; Description: Tool Change Macro
+; Notes: For A901736
+; Requires: 
+; Revision Date: 19 Jun 2026
+; Please see TB300 or the following link for tips on writing custom macros.
+; https://www.centroidcnc.com/centroid_diy/downloads/acorn_documentation/centroid_cnc_macro_programming.pdf
+; Copyright SMC 2025
+;------------------------------------------------------------------------------
+; Parameters:
+; #9431 = 1 : Fork Style Holder
+;
+; System Variables:
+; #4003 = Positioning Mode (G90/G91)
+;
+; PLC Variables:
+; AtPutbackLocation_M         IS MEM304 (#70304)
+; ToolChangeComplete_M        IS MEM305 (#70305)
+; AtRequestedToolLocation_M   IS MEM311 (#70311)
+; ToolUnclampedState_M        IS MEM801 (#70801)
+; ToolClampedState_M          IS MEM802 (#70802)
+; SpindleZeroSpeedState_M     IS MEM803 (#70803)
+; AirPressureState_M          IS MEM809 (#70809)
+; ToolRackInState_M           IS MEM810 (#70810)
+; ToolRackOutState_M          IS MEM811 (#70811)
+; PutBackPosition_W           IS W15    (#96015)
+;
+; User Variables:
+; #101 = Saved Positioning Mode (G90/G91)
+; #102 = Saved Units of Measure (G20/G21)
+; #107 = New Tool Request Bin Location
+;
+; Return Points:
+; G28 = Used For ToolCheck Position / M25 Home Positions
+; G30 = Used for Z Height Flyover
+;------------------------------------------------------------------------------
+IF #50001                        ;Prevent lookahead from parsing past here
+IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
+
+;Setup Defines
+G65 "#400\system\setup_defines.cnc"
+
+;Save Modes & Set Modals for Macro.
+#101 = <SV_POSITIONING_MODE>      ;Save Positioning Mode
+#102 = <SV_UNITS_OF_MEASURE>      ;Save Units of Measure
+G[<SV_MACHINE_UNITS>]             ;Set Measurement to Machine Units
+G94                               ;Disable Inverse Time
+
+;Skip Rack Mount Tool Change if Tool in Spindle
+IF <SV_TOOL_NUMBER> == #9976 THEN GOTO 1000
+
+IF <PARAM_ENHANCED_ATC> > 0 THEN #107 = #[<SV_TOOL_NUMBER> + 17000] ELSE #107 = <SV_TOOL_NUMBER>
+
+IF #107 > <PARAM_MAX_ATC_BINS> THEN GOTO 800    ;Error Tool Change on Invalid Tool
+
+;==============================================================================
+; Rack Mount Tool Change Program Starts
+;==============================================================================
+G90
+M5                                ;Turn off Spindle
+M9                                ;Disable Flood/Mist or DustCollector/VacuumHoldDown
+M70								  ;Send spindle head to high position
+M95 /73							  ;Disable DustHoodDown_O
+M101 /50020						  ;Wait for HoodUp_I
+M25                               ;Move to Z-Home Position (Reference #1 Z)
+M94 /74							  ;Open tool guard
+M101 /50023						  ;Wait for ToolGuardOpen_I
+M101 /70803                       ;Ensure Spindle at Zero Speed
+
+M101 /70809                       ;Confirm AirPressure
+
+;Skip Putaway if No Tool in Spindle
+IF #9976 == 0 && #9431 == 1 THEN GOTO 250
+
+;------------------------------------------------------------------------------
+; Put Tool Away Section (Fork)
+;------------------------------------------------------------------------------
+N200
+
+G65 "#400\system\rackmountbins\tool#9976position.cnc" A5 ;Move to Old Tool Clearance Position
+M72								 ;Send spindle head to tool position	  
+G65 "#400\system\rackmountbins\tool#9976position.cnc" A4 ;Move Z Down to Infront of Tool Fingers
+G65 "#400\system\rackmountbins\tool#9976position.cnc" A6 ;Engage Fingers
+M15								 ;Unclamp tool
+G30 G91 Z0                       ;Clear Z from Tool
+
+;------------------------------------------------------------------------------
+; Get New Tool Section (Fork)
+;------------------------------------------------------------------------------
+N250
+
+G30 G91 Z0						 ;Clear Z from Tool
+G90
+G65 "#400\system\rackmountbins\tool#107position.cnc" A3 ;Move to New Tool Position
+M15                              ;Unclamp Tool
+G65 "#400\system\rackmountbins\tool#107position.cnc" A4 ;Move Z Down to Tool Rack Height
+M16                              ;Clamp Tool
+G65 "#400\system\rackmountbins\tool#107position.cnc" A7 ;Disengage Fingers
+
+;------------------------------------------------------------------------------
+; Set Tool in Spindle
+;------------------------------------------------------------------------------
+N300
+IF #50001
+G4 P.2                           ;Dwell to ensure PLC Updates Putback Position
+
+G28 G91 Z0						 ;Move Z Up to Clear
+G90  
+M71								 ;Send spindle head to mid position
+
+;Prevent lookahead from reaching end of job and assigning putback before
+; location is updated.
+IF #50001
+
+GOTO 950
+
+N800 ;Errors
+M225 #100 "Invalid Tool Requested\nCycle Cancel to Abort"
+GOTO 800
+
+N950 ;Restore Modes
+G#101 ;Restore Positioning Mode
+G#102 ;Restore Units of Measure
+
+N1000                            ;End of Macro
