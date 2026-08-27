@@ -1,0 +1,9 @@
+Parameters:
+P6 = 1
+P160 = 1
+P161 = 26
+P431 = 1
+P432 = 2
+P830 = 7
+
+Return #2 G30 set Z to -5.5
